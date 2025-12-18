@@ -198,11 +198,11 @@
                 
                 <!-- Logo & Text -->
                 <div class="flex items-center flex-shrink min-w-0 mr-2 lg:mr-4">
-                    <!-- Mobile Logo Left 2px (-ml-[5px]) -->
-                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[5px]" alt="Logo">
+                    <!-- Mobile Logo Left Adjust (-ml-[7px]) -->
+                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[7px]" alt="Logo">
                     
-                    <!-- Mobile Text Left 3px (-ml-[4px]) -->
-                    <div class="flex flex-col justify-center min-w-0 -ml-[4px]">
+                    <!-- Mobile Text Left Adjust (-ml-[7px]) -->
+                    <div class="flex flex-col justify-center min-w-0 -ml-[7px]">
                         <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none whitespace-nowrap mobile-text-18">
                             Double Wood <span class="text-neonPurple">Design</span>
                         </a>
@@ -220,7 +220,6 @@
                         <a href="#terminology" class="nav-link text-center min-w-[190px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Design Terminology</a>
                         <a href="#portfolio" class="nav-link text-center min-w-[100px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Portfolio</a>
                         <a href="#plans" class="nav-link text-center min-w-[90px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Pricing</a>
-                        <!-- Added Why Us -->
                         <a href="#why-us" class="nav-link text-center min-w-[100px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Why Us</a>
                         <a href="#contact" class="nav-link text-center min-w-[120px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Contact Us</a>
                     </div>
@@ -229,9 +228,9 @@
                 <!-- Spacer -->
                 <div class="hidden 2xl:block w-[10px]"></div>
 
-                <!-- Mobile menu button - Right 3px (-mr-[10px]) -->
-                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[10px]">
-                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                <!-- Mobile menu button - Right Adjust (-mr-[13px]) and added z-index/cursor -->
+                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[13px] relative z-50">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 cursor-pointer">
                         <i class="fas fa-bars fa-lg"></i>
                     </button>
                 </div>
@@ -239,7 +238,7 @@
         </div>
 
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="fixed top-24 left-0 w-full bg-techDark z-40 2xl:hidden overflow-y-auto border-t border-gray-800 shadow-2xl h-screen">
+        <div id="mobile-menu" class="fixed top-24 left-0 w-full bg-techDark z-40 2xl:hidden overflow-y-auto border-t border-gray-800 shadow-2xl h-screen transform transition-transform duration-300 ease-in-out translate-x-full">
             <div class="px-2 pt-2 pb-20 space-y-1 sm:px-3 flex flex-col items-center text-center">
                 <a href="#home" class="mobile-link block px-3 py-4 rounded-md font-bold text-white hover:bg-gray-800 w-full border-b border-gray-800">Home</a>
                 <a href="#web-design" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Web Design</a>
@@ -482,7 +481,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Our Portfolio</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                <!-- P002 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P002.jpg" onerror="this.src='https://placehold.co/618x1000?text=P002'" alt="P002" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -491,7 +489,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P003 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P003.jpg" onerror="this.src='https://placehold.co/618x1000?text=P003'" alt="P003" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -500,7 +497,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P004 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P004.jpg" onerror="this.src='https://placehold.co/618x1000?text=P004'" alt="P004" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -509,7 +505,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P005 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P005.jpg" onerror="this.src='https://placehold.co/618x1000?text=P005'" alt="P005" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -518,7 +513,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P006 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P006.jpg" onerror="this.src='https://placehold.co/618x1000?text=P006'" alt="P006" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -527,7 +521,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P007 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P007.jpg" onerror="this.src='https://placehold.co/618x1000?text=P007'" alt="P007" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -536,7 +529,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P008 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P008.jpg" onerror="this.src='https://placehold.co/618x1000?text=P008'" alt="P008" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -562,7 +554,8 @@
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
                     <h3 class="pricing-title font-bold text-white mb-2">Starter</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px">
-                        $299
+                        $299<br>
+                        <span class="text-sm font-normal text-gray-300">2 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>2 Pages Website</div></li>
@@ -582,7 +575,8 @@
                     <div class="absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-lg rounded-bl-lg font-bold">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Standard</h3>
                     <div class="text-neonPurple font-bold mb-6 text-34px">
-                        $699
+                        $699<br>
+                        <span class="text-sm font-normal text-gray-300">6 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-300 mb-8">
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>6 Pages Website</div></li>
@@ -602,7 +596,8 @@
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
                     <h3 class="pricing-title font-bold text-white mb-2">Super</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px">
-                        $999
+                        $999<br>
+                        <span class="text-sm font-normal text-gray-300">10 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>10 Pages Website</div></li>
@@ -628,8 +623,8 @@
                 <p class="max-w-4xl mx-auto text-white text-xl font-bold mb-4">
                     How do we protect our clients’ interests?
                 </p>
-                <p class="text-neonCyan mb-8">
-                    3 Reasons: No satisfaction, no charge. Chinese market expertise. Great value.
+                <p class="text-gray-400 mb-8">
+                    <span class="text-white font-bold">3 Reasons:</span> No satisfaction, no charge. Chinese market expertise. Great value.
                 </p>
             </div>
 
@@ -723,95 +718,101 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 border-t border-gray-800 text-center">
         <p class="text-gray-500">
-            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <br>
-            <span class="text-white mt-1 block select-none">V1.11</span>
+            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <span style="color: #010101;">V1.12</span>
         </p>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
-        // Mobile Menu Toggle Logic
-        const btn = document.getElementById('mobile-menu-btn');
-        const menu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle Logic
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
 
-        btn.addEventListener('click', () => {
-            menu.classList.toggle('open');
-            const icon = btn.querySelector('i');
-            if (menu.classList.contains('open')) {
-                icon.classList.remove('fa-bars');
-                icon.classList.add('fa-times');
-            } else {
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            }
-        });
-
-        // Close mobile menu when a link is clicked
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                menu.classList.remove('open');
-                const icon = btn.querySelector('i');
-                icon.classList.remove('fa-times');
-                icon.classList.add('fa-bars');
-            });
-        });
-
-        // Scroll Spy Logic
-        const sections = document.querySelectorAll('section');
-        const navLinks = document.querySelectorAll('.nav-link');
-        const navHeight = 120; 
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= (sectionTop - navHeight - 100)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // GOOGLE SHEETS FORM SUBMISSION SCRIPT
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxcz1XlhfR6TYkWmvcLZtLrZ1crPSRSBDl_d8x92sNfewzAKGyUdo8rrytn_YFeRH1FVw/exec
-'; // <--- REPLACE THIS LATER
-        const form = document.forms['submit-to-google-sheet'];
-        const statusMsg = document.getElementById('form-status');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            
-            if(scriptURL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
-                alert("Please configure the Google Script URL in the code first.");
-                return;
-            }
-
-            statusMsg.innerHTML = "Sending...";
-            statusMsg.classList.remove('hidden', 'text-red-500');
-            statusMsg.classList.add('text-green-400');
-
-            fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
-                .then(() => {
-                    statusMsg.innerHTML = "Message Sent Successfully! We will contact you soon.";
-                    form.reset();
-                    setTimeout(() => {
-                        statusMsg.classList.add('hidden');
-                    }, 5000);
-                })
-                .catch(error => {
-                    statusMsg.innerHTML = "Error! Please try again later.";
-                    statusMsg.classList.remove('text-green-400');
-                    statusMsg.classList.add('text-red-500');
-                    console.error('Error!', error.message);
+            if (btn && menu) {
+                btn.addEventListener('click', () => {
+                    menu.classList.toggle('open');
+                    const icon = btn.querySelector('i');
+                    if (menu.classList.contains('open')) {
+                        icon.classList.remove('fa-bars');
+                        icon.classList.add('fa-times');
+                    } else {
+                        icon.classList.remove('fa-times');
+                        icon.classList.add('fa-bars');
+                    }
                 });
+
+                // Close mobile menu when a link is clicked
+                links.forEach(link => {
+                    link.addEventListener('click', () => {
+                        menu.classList.remove('open');
+                        const icon = btn.querySelector('i');
+                        if (icon) {
+                            icon.classList.remove('fa-times');
+                            icon.classList.add('fa-bars');
+                        }
+                    });
+                });
+            }
+
+            // Scroll Spy Logic
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+            const navHeight = 120; 
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= (sectionTop - navHeight - 100)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+
+            // GOOGLE SHEETS FORM SUBMISSION SCRIPT
+            const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE'; // <--- REPLACE THIS LATER
+            const form = document.forms['submit-to-google-sheet'];
+            const statusMsg = document.getElementById('form-status');
+
+            if (form) {
+                form.addEventListener('submit', e => {
+                    e.preventDefault();
+                    
+                    if(scriptURL === 'https://script.google.com/macros/s/AKfycbxcz1XlhfR6TYkWmvcLZtLrZ1crPSRSBDl_d8x92sNfewzAKGyUdo8rrytn_YFeRH1FVw/exec') {
+                        alert("Please configure the Google Script URL in the code first.");
+                        return;
+                    }
+
+                    statusMsg.innerHTML = "Sending...";
+                    statusMsg.classList.remove('hidden', 'text-red-500');
+                    statusMsg.classList.add('text-green-400');
+
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
+                        .then(() => {
+                            statusMsg.innerHTML = "Message Sent Successfully! We will contact you soon.";
+                            form.reset();
+                            setTimeout(() => {
+                                statusMsg.classList.add('hidden');
+                            }, 5000);
+                        })
+                        .catch(error => {
+                            statusMsg.innerHTML = "Error! Please try again later.";
+                            statusMsg.classList.remove('text-green-400');
+                            statusMsg.classList.add('text-red-500');
+                            console.error('Error!', error.message);
+                        });
+                });
+            }
         });
     </script>
 </body>
