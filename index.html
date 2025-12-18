@@ -112,7 +112,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #00f3ff;
-            /* Extended purple line */
             border-bottom: 2px solid #bc13fe;
             padding-bottom: 20px;
             display: inline-block;
@@ -122,13 +121,12 @@
         }
 
         /* Glow Card - Updated for easy tap on mobile */
-        /* Added :focus-within and .active class support for mobile taps */
         .card-hover:hover, .card-hover:active, .card-hover:focus {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3);
             border-color: #00f3ff;
             transition: all 0.3s ease;
-            outline: none; /* Remove default focus outline */
+            outline: none; 
         }
 
         .card-hover-purple:hover, .card-hover-purple:active, .card-hover-purple:focus {
@@ -175,7 +173,6 @@
             background: rgba(0, 0, 0, 0.85);
             transition: opacity 0.3s ease;
         }
-        /* Mobile Interaction Fix: focus state triggers overlay */
         .group:active .portfolio-overlay, 
         .group:focus .portfolio-overlay,
         .group:hover .portfolio-overlay {
@@ -188,42 +185,44 @@
     <!-- NAVIGATION -->
     <nav class="fixed w-full z-50 bg-techDark/95 backdrop-blur-md border-b border-gray-800">
         <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
-            <!-- Added justify-between to ensure hamburger isn't pushed out -->
             <div class="flex items-center justify-between h-24">
                 
-                <!-- Logo & Text (Flex container allowing shrink) -->
-                <div class="flex items-center flex-shrink min-w-0 mr-4">
-                    <!-- Circular Logo updated to logo.jpg, no border -->
-                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-14 h-14 rounded-full mr-4 flex-shrink-0" alt="Logo">
+                <!-- Logo & Text (Flex container) -->
+                <div class="flex items-center flex-shrink min-w-0 mr-2 lg:mr-4">
+                    <!-- Circular Logo: Smaller on mobile (w-10), Larger on desktop (w-14) -->
+                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0" alt="Logo">
                     
                     <div class="flex flex-col justify-center min-w-0">
-                        <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none truncate">
+                        <!-- Removed truncate, ensured whitespace normal for mobile wrapping if absolutely needed, or scale -->
+                        <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none whitespace-nowrap">
                             Double Wood <span class="text-neonPurple">Design</span>
                         </a>
-                        <!-- Slogan might truncate on very small screens to save layout -->
-                        <span class="text-white text-opacity-80 italic mt-1 font-bold truncate" style="font-size: 21px !important;">Professional Yet Affordable!</span>
+                        <!-- Removed truncate -->
+                        <span class="text-white text-opacity-80 italic mt-1 font-bold whitespace-nowrap" style="font-size: 21px !important;">Professional Yet Affordable!</span>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
                 <div class="hidden xl:flex flex-1 justify-center">
-                    <div class="flex items-center space-x-2">
-                        <a href="#home" class="nav-link text-center min-w-[100px] hover:text-neonCyan transition px-4 py-2 rounded-full font-bold text-white">Home</a>
-                        <a href="#web-design" class="nav-link text-center min-w-[140px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Web Design</a>
-                        <a href="#branding" class="nav-link text-center min-w-[170px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Graphic Design</a>
-                        <a href="#social" class="nav-link text-center min-w-[210px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Media Management</a>
-                        <a href="#terminology" class="nav-link text-center min-w-[200px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Design Terminology</a>
-                        <a href="#portfolio" class="nav-link text-center min-w-[110px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Portfolio</a>
-                        <a href="#plans" class="nav-link text-center min-w-[110px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Pricing</a>
-                        <a href="#contact" class="nav-link text-center min-w-[130px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Contact Us</a>
+                    <!-- Reduced space-x to 1 -->
+                    <div class="flex items-center space-x-1">
+                        <!-- Reduced px to 2 -->
+                        <a href="#home" class="nav-link text-center min-w-[90px] hover:text-neonCyan transition px-2 py-2 rounded-full font-bold text-white">Home</a>
+                        <a href="#web-design" class="nav-link text-center min-w-[130px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Web Design</a>
+                        <a href="#branding" class="nav-link text-center min-w-[160px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Graphic Design</a>
+                        <a href="#social" class="nav-link text-center min-w-[200px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Media Management</a>
+                        <a href="#terminology" class="nav-link text-center min-w-[190px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Design Terminology</a>
+                        <a href="#portfolio" class="nav-link text-center min-w-[100px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Portfolio</a>
+                        <a href="#plans" class="nav-link text-center min-w-[90px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Pricing</a>
+                        <a href="#contact" class="nav-link text-center min-w-[120px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Contact Us</a>
                     </div>
                 </div>
 
-                <!-- Spacer for desktop centering balance -->
+                <!-- Spacer -->
                 <div class="hidden xl:block w-[10px]"></div>
 
-                <!-- Mobile menu button (Fixed: prevents shrinking so it never disappears) -->
-                <div class="xl:hidden flex items-center flex-shrink-0 ml-4">
+                <!-- Mobile menu button -->
+                <div class="xl:hidden flex items-center flex-shrink-0 ml-2">
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
                         <i class="fas fa-bars fa-lg"></i>
                     </button>
@@ -297,7 +296,6 @@
                 </p>
             </div>
 
-            <!-- Added tabindex="0" and onclick="void(0)" for mobile touch support -->
             <div class="grid md:grid-cols-3 gap-8">
                 <div class="bg-techDark p-8 rounded-xl border border-gray-800 card-hover" tabindex="0" onclick="void(0)">
                     <div class="text-neonCyan mb-6"><i class="fas fa-mobile-alt fa-2x"></i></div>
@@ -340,11 +338,11 @@
                         Tangible Branding for the Real World. Even in a digital world, a physical handshake often comes with a business card. We ensure your offline presence matches your online excellence.
                     </p>
                     <ul class="space-y-4 text-gray-400">
-                        <!-- Up 2px using -translate-y-[2px] -->
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[2px] mr-4"></i> Custom Business Cards</li>
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[2px] mr-4"></i> Promotional Flyers</li>
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[2px] mr-4"></i> Brochure Layouts</li>
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[2px] mr-4"></i> Print-Ready Files</li>
+                        <!-- Down 1px from prev (was -2px, now -1px) -->
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[1px] mr-4"></i> Custom Business Cards</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[1px] mr-4"></i> Promotional Flyers</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[1px] mr-4"></i> Brochure Layouts</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple transform -translate-y-[1px] mr-4"></i> Print-Ready Files</li>
                     </ul>
                 </div>
             </div>
@@ -356,7 +354,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
-                <!-- Centering class added to container -->
+                <!-- Centering class -->
                 <div class="text-center w-full">
                     <h2 class="section-title text-34px">Media Management</h2>
                     <p class="mb-8 max-w-2xl mx-auto">
@@ -403,7 +401,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Design Terminology</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
-                <!-- Original Items -->
                 <div class="space-y-2">
                     <h3 class="text-neonCyan font-bold">UI (User Interface)</h3>
                     <p class="text-gray-400">The visual layout of the website. It includes buttons, images, text, and how the site looks to the eye.</p>
@@ -565,13 +562,13 @@
                         <span class="text-sm font-normal text-gray-300">2 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>2 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Free Hosting at Google Sites</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Footer: Double Wood Design</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>2 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Free Hosting at Google Sites</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Footer: Double Wood Design</div></li>
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
                 </div>
@@ -585,14 +582,14 @@
                         <span class="text-sm font-normal text-gray-300">6 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-300 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>6 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>Free Hosting at Cloudflare</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>Chinese Translation</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[2px]"></i></div><div>Footer: Double Wood Design</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>6 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Free Hosting at Cloudflare</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Chinese Translation</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Footer: Double Wood Design</div></li>
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-neonPurple text-white py-3 rounded hover:bg-white hover:text-purple-700 transition font-bold">Select Plan</a>
                 </div>
@@ -605,13 +602,13 @@
                         <span class="text-sm font-normal text-gray-300">10 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>10 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Free Hosting at Cloudflare</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[2px]"></i></div><div>Chinese Translation</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>10 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Free Hosting at Cloudflare</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Chinese Translation</div></li>
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
                 </div>
@@ -624,7 +621,6 @@
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title block mb-4 text-34px mx-auto">Contact Us</h2>
             <h3 class="text-center mb-8">
-                <!-- Color updated to match Pricing Subtitle (text-white) -->
                 <span class="text-white font-bold">3 Contact Methods:</span> <span class="text-gray-400 font-bold">WhatsApp, FB Messenger, Contact Form. Proudly helping Kiwi business grow.</span>
             </h3>
             
@@ -636,45 +632,48 @@
                 <a href="https://m.me/DoubleWoodPro" target="_blank" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:-translate-y-1">
                     <i class="fab fa-facebook-messenger fa-2x mr-3"></i> Messenger
                 </a>
-                <button onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})" class="flex items-center justify-center bg-neonPurple hover:bg-purple-700 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:-translate-y-1">
+                <button onclick="document.getElementById('contact-form-container').scrollIntoView({behavior: 'smooth'})" class="flex items-center justify-center bg-neonPurple hover:bg-purple-700 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:-translate-y-1">
                     <i class="fas fa-envelope fa-2x mr-3"></i> Contact Form
                 </button>
             </div>
 
-            <div id="contact-form" class="bg-techDark p-8 rounded-2xl border border-gray-700 shadow-2xl text-left">
-                <form class="space-y-8">
-                    <!-- Name and Email Vertical Layout -->
+            <!-- Form Container -->
+            <div id="contact-form-container" class="bg-techDark p-8 rounded-2xl border border-gray-700 shadow-2xl text-left">
+                <!-- IMPORTANT: Form names MUST match Google Sheet Headers -->
+                <!-- We will use Javascript to submit this form -->
+                <form name="submit-to-google-sheet">
                     <div class="grid grid-cols-1 gap-8">
                         <div>
                             <label class="block text-neonCyan mb-2 font-bold">Name</label>
-                            <input type="text" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="John">
+                            <input type="text" name="Name" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="John" required>
                         </div>
                         <div>
                             <label class="block text-neonCyan mb-2 font-bold">Email</label>
-                            <input type="email" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="john@example.co.nz">
+                            <input type="email" name="Email" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="john@example.co.nz" required>
                         </div>
                     </div>
                     <div>
                         <label class="block text-neonCyan mb-2 font-bold">Service Interest</label>
-                        <!-- Increased height to 68px -->
-                        <select class="w-full h-[68px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
-                            <option>Web Design</option>
+                        <select name="Service" class="w-full h-[68px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
+                            <option value="Web Design">Web Design</option>
                             <option value="Business Card Design">Business Card Design</option>
                             <option value="Flyer Design">Flyer Design</option>
                             <option value="Logo Design">Logo Design</option>
                             <option value="Social Media Management">Social Media Management</option>
                             <option value="Content Creation Management">Content Creation Management</option>
                             <option value="Advertising Management">Advertising Management</option>
-                            <option>Other</option>
+                            <option value="Other">Other</option>
                         </select>
                     </div>
                     <div>
                         <label class="block text-neonCyan mb-2 font-bold">Message</label>
-                        <textarea rows="4" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="Tell us about your project..."></textarea>
+                        <textarea name="Message" rows="4" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="Tell us about your project..." required></textarea>
                     </div>
-                    <button type="button" class="w-full bg-gradient-to-r from-neonCyan to-blue-500 text-black font-black py-4 rounded hover:from-white hover:to-white transition shadow-lg transform hover:-translate-y-1">
+                    <button type="submit" class="w-full bg-gradient-to-r from-neonCyan to-blue-500 text-black font-black py-4 rounded hover:from-white hover:to-white transition shadow-lg transform hover:-translate-y-1 mt-4">
                         SEND MESSAGE
                     </button>
+                    <!-- Loading/Success Message -->
+                    <p id="form-status" class="text-center mt-4 text-green-400 font-bold hidden"></p>
                 </form>
             </div>
         </div>
@@ -683,7 +682,7 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 border-t border-gray-800 text-center">
         <p class="text-gray-500">
-            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. V1.8
+            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. V1.9
         </p>
     </footer>
 
@@ -726,8 +725,6 @@
             
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                
-                // If we have scrolled past nav area
                 if (pageYOffset >= (sectionTop - navHeight - 100)) {
                     current = section.getAttribute('id');
                 }
@@ -739,6 +736,39 @@
                     link.classList.add('active');
                 }
             });
+        });
+
+        // GOOGLE SHEETS FORM SUBMISSION SCRIPT
+        const scriptURL = 'YOUR_GOOGLE_SCRIPT_URL_HERE'; // <--- REPLACE THIS LATER
+        const form = document.forms['submit-to-google-sheet'];
+        const statusMsg = document.getElementById('form-status');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            
+            if(scriptURL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                alert("Please configure the Google Script URL in the code first.");
+                return;
+            }
+
+            statusMsg.innerHTML = "Sending...";
+            statusMsg.classList.remove('hidden', 'text-red-500');
+            statusMsg.classList.add('text-green-400');
+
+            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => {
+                    statusMsg.innerHTML = "Message Sent Successfully! We will contact you soon.";
+                    form.reset();
+                    setTimeout(() => {
+                        statusMsg.classList.add('hidden');
+                    }, 5000);
+                })
+                .catch(error => {
+                    statusMsg.innerHTML = "Error! Please try again later.";
+                    statusMsg.classList.remove('text-green-400');
+                    statusMsg.classList.add('text-red-500');
+                    console.error('Error!', error.message);
+                });
         });
     </script>
 </body>
