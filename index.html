@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Optimization -->
+    <title>Double Wood Design | Professional Web Design & Digital Marketing NZ</title>
+    <meta name="description" content="Professional Yet Affordable Web Design, Graphic Design, and Media Management for New Zealand SMEs. Mobile First, Performance First, Viral First.">
+    <meta name="keywords" content="Web design, Website design, Graphic design, Business card design, Flyer design, Logo design, Social media management, Advertising Management, Media Management, Google Analytics, Facebook Pixel, Landing Page, Sales Funnel, New Zealand, Auckland, SME, Digital Marketing">
+    <meta name="author" content="Double Wood Design">
+    
+    <!-- Open Graph for Social Media -->
+    <meta property="og:title" content="Double Wood Design | Professional Yet Affordable!">
+    <meta property="og:description" content="3 Firsts: Mobile first, Performance first, SEO first. We help Kiwi businesses grow.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop">
+    <meta property="og:url" content="https://www.doublewooddesign.co.nz">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+    <!-- Custom Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        techDark: '#0a0a12',
+                        techCard: '#13131f',
+                        neonCyan: '#00f3ff',     /* Theme Color 1 */
+                        neonPurple: '#bc13fe',   /* Theme Color 2 */
+                        textGray: '#e0e0e0',
+                        whatsapp: '#25D366',
+                        messenger: '#0084FF'
+                    },
+                    fontFamily: {
+                        sans: ['Roboto', 'sans-serif'],
+                        tech: ['Orbitron', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* CSS Smooth Scroll Padding to fix Nav hiding content */
+        html {
+            scroll-padding-top: 100px; /* Adjust based on nav height */
+        }
+
+        /* STRICT FONT SIZE RULE: All text is 21px unless overridden */
+        html, body, div, span, applet, object, iframe,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+        a, abbr, acronym, address, big, cite, code,
+        del, dfn, em, img, ins, kbd, q, s, samp,
+        small, strike, strong, sub, sup, tt, var,
+        b, u, i, center,
+        dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend,
+        table, caption, tbody, tfoot, thead, tr, th, td,
+        article, aside, canvas, details, embed, 
+        figure, figcaption, footer, header, hgroup, 
+        menu, nav, output, ruby, section, summary,
+        time, mark, audio, video, button, input, textarea, select {
+            font-size: 21px !important;
+            line-height: 1.6 !important;
+        }
+
+        /* Exception for Pricing Titles as requested */
+        .pricing-title {
+            font-size: 34px !important;
+            line-height: 1.2 !important;
+        }
+
+        ::-webkit-scrollbar {
+            width: 12px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a12;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #00f3ff;
+            border-radius: 6px;
+        }
+
+        .neon-text {
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.7);
+        }
+        .neon-border {
+            box-shadow: 0 0 15px rgba(188, 19, 254, 0.3);
+        }
+        
+        #mobile-menu {
+            transition: transform 0.3s ease-in-out;
+            transform: translateX(100%);
+        }
+        #mobile-menu.open {
+            transform: translateX(0);
+        }
+
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #00f3ff;
+            border-bottom: 2px solid #bc13fe;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        /* Cyan Glow Card (Mobile First etc) */
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.15);
+            border-color: #00f3ff;
+            transition: all 0.3s ease;
+        }
+
+        /* Purple Glow Card (Services) */
+        .card-hover-purple:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(188, 19, 254, 0.25);
+            border-color: #bc13fe;
+            transition: all 0.3s ease;
+        }
+
+        /* SUPER Mixed Glow Card (Pricing) - Brightness increased */
+        .card-hover-mixed:hover {
+            transform: translateY(-5px);
+            /* Much stronger shadow for "neon" effect */
+            box-shadow: 0 0 40px rgba(0, 243, 255, 0.5), 0 0 60px rgba(188, 19, 254, 0.4);
+            border-color: #00f3ff; 
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        /* Active Navigation State - Pill Button Style */
+        .nav-link.active {
+            background-color: #00f3ff; /* neonCyan background */
+            color: #000000 !important; /* Black text for contrast */
+            border-radius: 9999px; /* Pill shape */
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+            font-weight: 700;
+            border: none;
+            text-shadow: none;
+        }
+
+        /* Flip Utility */
+        .flip-horizontal {
+            transform: scaleX(-1);
+        }
+        
+        /* Mobile Optimization overrides */
+        @media (max-width: 640px) {
+            .section-padding {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-techDark text-textGray font-sans antialiased overflow-x-hidden">
+
+    <!-- NAVIGATION -->
+    <nav class="fixed w-full z-50 bg-techDark/95 backdrop-blur-md border-b border-gray-800">
+        <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center h-24">
+                
+                <!-- Logo & Slogan (Left Aligned) -->
+                <div class="flex-shrink-0 flex flex-col justify-center mr-8">
+                    <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none">
+                        Double Wood <span class="text-neonPurple">Design</span>
+                    </a>
+                    <span class="text-white text-opacity-80 italic mt-1 font-bold" style="font-size: 21px !important;">Professional Yet Affordable!</span>
+                </div>
+
+                <!-- Desktop Menu (Centered in remaining space) -->
+                <div class="hidden xl:flex flex-1 justify-center">
+                    <div class="flex items-center space-x-2">
+                        <a href="#home" class="nav-link text-center min-w-[100px] hover:text-neonCyan transition px-4 py-2 rounded-full font-bold text-white">Home</a>
+                        <a href="#web-design" class="nav-link text-center min-w-[140px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Web Design</a>
+                        <a href="#branding" class="nav-link text-center min-w-[170px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Graphic Design</a>
+                        <a href="#social" class="nav-link text-center min-w-[210px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Media Management</a>
+                        <a href="#terminology" class="nav-link text-center min-w-[200px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Design Terminology</a>
+                        <a href="#portfolio" class="nav-link text-center min-w-[110px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Portfolio</a>
+                        <a href="#plans" class="nav-link text-center min-w-[110px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Pricing</a>
+                        <a href="#contact" class="nav-link text-center min-w-[130px] hover:text-neonCyan transition px-4 py-2 rounded-full font-medium text-gray-300">Contact Us</a>
+                    </div>
+                </div>
+
+                <!-- Spacer to balance logo width if needed for perfect centering, otherwise empty -->
+                <div class="hidden xl:block w-[10px]"></div>
+
+                <!-- Mobile menu button (Right aligned on mobile) -->
+                <div class="xl:hidden flex items-center ml-auto">
+                    <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="fixed inset-0 top-24 bg-techDark z-40 xl:hidden overflow-y-auto pb-20 border-t border-gray-800">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col items-center text-center">
+                <a href="#home" class="mobile-link block px-3 py-3 rounded-md font-bold text-white hover:bg-gray-800 w-full border-b border-gray-800">Home</a>
+                <a href="#web-design" class="mobile-link block px-3 py-3 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Web Design</a>
+                <a href="#branding" class="mobile-link block px-3 py-3 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Graphic Design</a>
+                <a href="#social" class="mobile-link block px-3 py-3 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Media Management</a>
+                <a href="#terminology" class="mobile-link block px-3 py-3 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Design Terminology</a>
+                <a href="#portfolio" class="mobile-link block px-3 py-3 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Portfolio</a>
+                <a href="#plans" class="mobile-link block px-3 py-3 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Pricing</a>
+                <a href="#contact" class="mobile-link block px-3 py-3 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Contact Us</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="relative pt-32 pb-20 lg:pt-48 lg:pb-32 flex items-center min-h-screen">
+        <div class="absolute inset-0 bg-gradient-to-br from-techDark via-gray-900 to-[#1a0b2e] z-0"></div>
+        <div class="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')] bg-cover bg-center z-0"></div>
+        
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center lg:text-left">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="font-tech font-black text-white mb-6 neon-text tracking-wide">
+                        Future-Proof Digital Solutions for <span class="text-neonCyan">Kiwi Business</span>
+                    </h1>
+                    <p class="mb-8 text-gray-300 font-light">
+                        We design stunning, high-performance websites specifically tailored for New Zealand's SMEs. From Auckland to Invercargill, we help you stand out in the digital age.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <a href="#plans" class="bg-neonCyan text-black font-bold px-8 py-4 rounded hover:bg-white transition shadow-[0_0_20px_rgba(0,243,255,0.4)] text-center">
+                            Our Plans
+                        </a>
+                        <a href="#portfolio" class="bg-neonPurple text-white font-bold px-8 py-4 rounded hover:bg-purple-700 transition text-center shadow-lg shadow-purple-500/30">
+                            Our Work
+                        </a>
+                    </div>
+                    
+                    <!-- Mobile only image -->
+                    <div class="lg:hidden mt-12 flex justify-center">
+                        <div class="relative w-full max-w-sm">
+                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Web Design Analysis" class="rounded-lg shadow-2xl border border-gray-700 w-full object-cover h-64 neon-border">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Desktop image -->
+                <div class="hidden lg:flex justify-center">
+                    <div class="relative w-full max-w-md aspect-square bg-gradient-to-tr from-neonPurple to-neonCyan rounded-full blur-3xl opacity-30 animate-pulse"></div>
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" alt="Web Design Analysis" class="absolute rounded-lg shadow-2xl border border-gray-700 w-full max-w-md object-cover h-96 neon-border transform rotate-3 hover:rotate-0 transition duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WEB DESIGN SECTION -->
+    <section id="web-design" class="py-24 bg-techCard relative border-t border-gray-800 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title">Web Design</h2>
+                <p class="max-w-4xl mx-auto text-gray-400">
+                    <span class="text-white font-bold">3 Firsts:</span> <span class="text-gray-400">Mobile first, Performance first, SEO first. Not just a website. A digital experience.</span>
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-techDark p-8 rounded-xl border border-gray-800 card-hover">
+                    <div class="text-neonCyan mb-6"><i class="fas fa-mobile-alt fa-2x"></i></div>
+                    <h3 class="font-bold text-white mb-4">Mobile First</h3>
+                    <p class="text-gray-400">
+                        Your website will look perfect on any device. From iPhone to iMac, we ensure a seamless user experience across all screen sizes.
+                    </p>
+                </div>
+                <div class="bg-techDark p-8 rounded-xl border border-gray-800 card-hover">
+                    <div class="text-neonCyan mb-6"><i class="fas fa-rocket fa-2x"></i></div>
+                    <h3 class="font-bold text-white mb-4">Performance First</h3>
+                    <p class="text-gray-400">
+                        Speed matters. We code with clean HTML/CSS and optimize assets to ensure your site loads instantly for Kiwi customers.
+                    </p>
+                </div>
+                <div class="bg-techDark p-8 rounded-xl border border-gray-800 card-hover">
+                    <div class="text-neonCyan mb-6"><i class="fas fa-share-nodes fa-2x"></i></div>
+                    <h3 class="font-bold text-white mb-4">Viral First</h3>
+                    <p class="text-gray-400">
+                        Built with Google and social media in mind. Proper structure and tags help your business get found by local customers in New Zealand.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GRAPHIC DESIGN -->
+    <section id="branding" class="py-24 bg-techDark border-t border-gray-800 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="order-2 lg:order-1">
+                    <img src="https://images.unsplash.com/photo-1626785774573-4b7993143a26?q=80&w=2070&auto=format&fit=crop" alt="Flyer Design" class="rounded-lg shadow-2xl neon-border">
+                </div>
+                <div class="order-1 lg:order-2">
+                    <h2 class="section-title">Graphic Design</h2>
+                    <h3 class="mb-6 mt-4">
+                        <span class="text-white font-bold">3 Designs:</span> <span class="text-gray-400">Business card design, Flyer design, Logo design</span>
+                    </h3>
+                    <p class="text-gray-300 mb-6">
+                        Tangible Branding for the Real World. Even in a digital world, a physical handshake often comes with a business card. We ensure your offline presence matches your online excellence.
+                    </p>
+                    <ul class="space-y-4 text-gray-400">
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Custom Business Cards</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Promotional Flyers</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Brochure Layouts</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Print-Ready Files</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MEDIA MANAGEMENT (Formerly Social) -->
+    <section id="social" class="py-24 bg-techCard border-t border-gray-800 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
+                <div>
+                    <h2 class="section-title">Media Management</h2>
+                    <p class="mb-8">
+                        <span class="text-white font-bold">3 Management Services:</span> <span class="text-gray-400">Social media management, Content creation management, Advertising management. Connecting you with the local community on Facebook, Instagram, and Threads.</span>
+                    </p>
+                    
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <!-- 1. Social Media Management -->
+                        <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
+                            <div class="flex space-x-3 mb-4">
+                                <i class="fab fa-facebook text-blue-500"></i>
+                                <i class="fab fa-instagram text-pink-500"></i>
+                                <i class="fa-brands fa-threads text-white"></i>
+                            </div>
+                            <strong class="text-white block mb-2">Social media management</strong>
+                            <p class="text-gray-400 text-sm">We manage your Facebook, Instagram, Threads, and Google Business Profile to promote your business.</p>
+                        </div>
+                        
+                        <!-- 2. Content Creation Management -->
+                        <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
+                            <i class="fas fa-pen-fancy text-pink-500 mb-4 block"></i>
+                            <strong class="text-white block mb-2">Content Creation Management</strong>
+                            <p class="text-gray-400 text-sm">You provide the post topics. We write the content so you can focus on your business.</p>
+                        </div>
+
+                        <!-- 3. Advertising Management -->
+                        <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
+                            <i class="fas fa-bullhorn text-green-500 mb-4 block"></i>
+                            <strong class="text-white block mb-2">Advertising Management</strong>
+                            <p class="text-gray-400 text-sm">We manage your Google Ads and Facebook Ads to help grow your business.</p>
+                        </div>
+
+                        <!-- 4. Visual Design -->
+                        <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
+                            <i class="fas fa-image text-blue-700 mb-4 block"></i>
+                            <strong class="text-white block mb-2">Visual Design</strong>
+                            <p class="text-gray-400 text-sm">We design suitable images for every post to save you time and effort.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- The image, Flipped Horizontally -->
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?q=80&w=2070&auto=format&fit=crop" alt="Social Media Branding" class="rounded-lg shadow-2xl neon-border flip-horizontal">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- DESIGN TERMINOLOGY -->
+    <section id="terminology" class="py-24 bg-techDark border-t border-gray-800 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title mb-12">Design Terminology</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Original Items -->
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">UI (User Interface)</h3>
+                    <p class="text-gray-400">The visual layout of the website. It includes buttons, images, text, and how the site looks to the eye.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">UX (User Experience)</h3>
+                    <p class="text-gray-400">How the user feels when navigating your site. Is it easy to find the contact button? Does it flow logically?</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">CMS</h3>
+                    <p class="text-gray-400">Content Management System like WordPress or Shopify that allows you to edit content without coding.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Hosting</h3>
+                    <p class="text-gray-400">The "land" where your website house sits. We handle secure server setup.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Golden Rule</h3>
+                    <p class="text-gray-400">Design principles that ensure visual balance and focus, guiding the user's eye to the most important content.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">SSL (HTTPS)</h3>
+                    <p class="text-gray-400">Secure Sockets Layer. It encrypts data, providing the green lock icon. Essential for security and Google ranking.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">RWD</h3>
+                    <p class="text-gray-400">Responsive Web Design. Allows your site to adapt perfectly to mobile, tablet, and desktop screens automatically.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">SEO</h3>
+                    <p class="text-gray-400">Search Engine Optimization. Techniques to help your website rank higher on Google search results.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">UTM Tags</h3>
+                    <p class="text-gray-400">Codes added to URLs to track where your traffic comes from (e.g., from a specific Facebook ad).</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Meta Tags</h3>
+                    <p class="text-gray-400">Snippets of text that describe a page's content; they don't appear on the page itself, but only in the page's code.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">HTML/CSS/JS</h3>
+                    <p class="text-gray-400">The building blocks of the web. HTML is structure, CSS is style, and JavaScript is interactivity.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Google Search Console</h3>
+                    <p class="text-gray-400">A free service by Google that helps you monitor, maintain, and troubleshoot your site's presence in Google Search results.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Google Business Profile</h3>
+                    <p class="text-gray-400">Your business listing on Google Maps and Search. Crucial for local SEO.</p>
+                </div>
+
+                <!-- New Added Items -->
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Google Analytics</h3>
+                    <p class="text-gray-400">A web analytics service offered by Google that tracks and reports website traffic.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Facebook Pixel</h3>
+                    <p class="text-gray-400">Code placed on your website that helps you track conversions from Facebook ads.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Landing Page</h3>
+                    <p class="text-gray-400">A standalone web page, created specifically for a marketing or advertising campaign.</p>
+                </div>
+                <div class="space-y-2">
+                    <h3 class="text-neonCyan font-bold">Sales Funnel</h3>
+                    <p class="text-gray-400">The journey that a potential customer goes through on the way to purchase.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-24 bg-techCard border-t border-gray-800 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title mb-12">Our Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                    <img src="https://images.unsplash.com/photo-1481487484168-9b930d5b7d9f?q=80&w=2070&auto=format&fit=crop" alt="Project 1" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-neonCyan font-bold mb-2">Kiwi Coffee Roasters</h3>
+                            <p class="text-white">E-commerce Website</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop" alt="Project 2" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-neonCyan font-bold mb-2">Auckland Law Firm</h3>
+                            <p class="text-white">Corporate Identity</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                    <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=2070&auto=format&fit=crop" alt="Project 3" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-black/80 flex items-center justify-center opacity-0 group-hover:opacity-100 transition duration-300">
+                        <div class="text-center p-4">
+                            <h3 class="text-neonCyan font-bold mb-2">Tech Startups NZ</h3>
+                            <p class="text-white">Landing Page & Branding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANS & PRICING -->
+    <section id="plans" class="py-24 bg-techDark border-t border-gray-800 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title mb-2">Pricing</h2>
+            <p class="mb-12">
+                <span class="text-white font-bold">3 “S” plans:</span> <span class="text-gray-400">Starter, Standard, and Super. One plan is Suitable for you.</span>
+            </p>
+            <div class="grid lg:grid-cols-3 gap-8 items-end">
+                
+                <!-- Starter -->
+                <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full">
+                    <h3 class="pricing-title font-bold text-white mb-2">Starter</h3>
+                    <div class="text-neonCyan font-bold mb-6">$299 for 2 pages</div>
+                    <ul class="space-y-4 text-gray-400 mb-8">
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>2 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>2 days of unlimited revisions</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Free Hosting at Google Sites</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Chinese Translation</div></li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
+                </div>
+                
+                <!-- Standard -->
+                <div class="bg-gray-800 border-2 border-neonPurple p-8 rounded-2xl relative shadow-[0_0_30px_rgba(188,19,254,0.2)] card-hover-mixed transition h-full">
+                    <div class="absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-lg rounded-bl-lg font-bold">POPULAR</div>
+                    <h3 class="pricing-title font-bold text-white mb-2">Standard</h3>
+                    <div class="text-neonPurple font-bold mb-6">$699 for 6 pages</div>
+                    <ul class="space-y-4 text-gray-300 mb-8">
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>6 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>6 days of unlimited revisions</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Free Hosting at Cloudflare</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Chinese Translation</div></li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-neonPurple text-white py-3 rounded hover:bg-white hover:text-purple-700 transition font-bold">Select Plan</a>
+                </div>
+                
+                <!-- Super -->
+                <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full">
+                    <h3 class="pricing-title font-bold text-white mb-2">Super</h3>
+                    <div class="text-neonCyan font-bold mb-6">$999 for 10 pages</div>
+                    <ul class="space-y-4 text-gray-400 mb-8">
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>10 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>10 days of unlimited revisions</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Free Hosting at Cloudflare</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Chinese Translation</div></li>
+                    </ul>
+                    <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT US -->
+    <section id="contact" class="py-24 bg-techCard border-t border-gray-800 section-padding">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="section-title text-center block mb-4">Contact Us</h2>
+            <h3 class="text-center mb-8">
+                <span class="text-white font-bold">3 Contact Methods:</span> <span class="text-gray-400">WhatsApp, FB Messenger, Contact Form</span>
+            </h3>
+            
+            <!-- 3 Contact Buttons -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+                <a href="https://wa.me/64212223981" target="_blank" class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fab fa-whatsapp fa-2x mr-3"></i> WhatsApp
+                </a>
+                <a href="https://m.me/DoubleWoodPro" target="_blank" class="flex items-center justify-center bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fab fa-facebook-messenger fa-2x mr-3"></i> Messenger
+                </a>
+                <button onclick="document.getElementById('contact-form').scrollIntoView({behavior: 'smooth'})" class="flex items-center justify-center bg-neonPurple hover:bg-purple-700 text-white font-bold py-4 rounded-lg shadow-lg transition transform hover:-translate-y-1">
+                    <i class="fas fa-envelope fa-2x mr-3"></i> Contact Form
+                </button>
+            </div>
+
+            <div id="contact-form" class="bg-techDark p-8 rounded-2xl border border-gray-700 shadow-2xl">
+                <form class="space-y-8">
+                    <!-- Name and Email Vertical Layout -->
+                    <div class="grid grid-cols-1 gap-8">
+                        <div>
+                            <label class="block text-neonCyan mb-2 font-bold">Name</label>
+                            <input type="text" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="John">
+                        </div>
+                        <div>
+                            <label class="block text-neonCyan mb-2 font-bold">Email</label>
+                            <input type="email" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="john@example.co.nz">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-neonCyan mb-2 font-bold">Service Interest</label>
+                        <!-- Increased height to 55px -->
+                        <select class="w-full h-[55px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
+                            <option>Web Design</option>
+                            <option disabled class="text-gray-500 font-bold bg-gray-800">-- Graphic Design --</option>
+                            <option value="Business Card Design">Business Card Design</option>
+                            <option value="Flyer Design">Flyer Design</option>
+                            <option value="Logo Design">Logo Design</option>
+                            <option disabled class="text-gray-500 font-bold bg-gray-800">-- Media Management --</option>
+                            <option value="Social Media Management">Social Media Management</option>
+                            <option value="Content Creation Management">Content Creation Management</option>
+                            <option value="Advertising Management">Advertising Management</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-neonCyan mb-2 font-bold">Message</label>
+                        <textarea rows="4" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="Tell us about your project..."></textarea>
+                    </div>
+                    <button type="button" class="w-full bg-gradient-to-r from-neonCyan to-blue-500 text-black font-black py-4 rounded hover:from-white hover:to-white transition shadow-lg transform hover:-translate-y-1">
+                        SEND MESSAGE
+                    </button>
+                </form>
+
+                <div class="mt-12 text-center border-t border-gray-800 pt-8">
+                    <p class="mb-2 text-white font-bold">Proudly helping Kiwi businesses grow.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-gray-800 text-center">
+        <p class="text-gray-500">
+            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <br>
+            <!-- V1.5 Hidden via color matching background (#000000) -->
+            <span class="text-black mt-2 block select-none">V1.5</span>
+        </p>
+    </footer>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const links = document.querySelectorAll('.mobile-link');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('open');
+            const icon = btn.querySelector('i');
+            if (menu.classList.contains('open')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        });
+
+        // Close mobile menu when a link is clicked
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('open');
+                const icon = btn.querySelector('i');
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            });
+        });
+
+        // Scroll Spy Logic
+        const sections = document.querySelectorAll('section');
+        const navLinks = document.querySelectorAll('.nav-link');
+        const navHeight = 120; 
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                
+                // If we have scrolled past nav area
+                if (pageYOffset >= (sectionTop - navHeight - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
