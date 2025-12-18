@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <!-- SEO Optimization -->
-    <title>Double Wood Design | Professional Web Design & Digital Marketing NZ</title>
+    <title>Double Wood Design | Professional Web Design & Graphic Design in NZ</title>
     <meta name="description" content="Professional Yet Affordable Web Design, Graphic Design, and Media Management for New Zealand SMEs. Mobile First, Performance First, Viral First.">
     <meta name="keywords" content="Web design, Website design, Graphic design, Business card design, Flyer design, Logo design, Social media management, Advertising Management, Media Management, Google Analytics, Facebook Pixel, Landing Page, Sales Funnel, New Zealand, Auckland, SME, Digital Marketing">
     <meta name="author" content="Double Wood Design">
@@ -14,7 +14,6 @@
     <meta property="og:title" content="Double Wood Design | Professional Yet Affordable!">
     <meta property="og:description" content="3 Firsts: Mobile first, Performance first, SEO first. We help Kiwi businesses grow.">
     <meta property="og:image" content="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop">
-    <!-- Updated URL -->
     <meta property="og:url" content="https://linktr.ee/DoubleWoodPro">
     
     <!-- Tailwind CSS -->
@@ -52,7 +51,7 @@
     <style>
         /* CSS Smooth Scroll Padding to fix Nav hiding content */
         html {
-            scroll-padding-top: 100px; /* Adjust based on nav height */
+            scroll-padding-top: 110px; /* Adjust based on nav height */
         }
 
         /* STRICT FONT SIZE RULE: All text is 21px unless overridden */
@@ -73,10 +72,10 @@
             line-height: 1.6 !important;
         }
 
-        /* Exception for Pricing Titles as requested */
-        .pricing-title {
+        /* 34px Font Size Rule for Headers and Prices */
+        .text-34px {
             font-size: 34px !important;
-            line-height: 1.2 !important;
+            line-height: 1.3 !important;
         }
 
         ::-webkit-scrollbar {
@@ -107,35 +106,40 @@
             transform: translateX(0);
         }
 
+        /* Section Title Styling - Extended Line */
         .section-title {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 2px;
             color: #00f3ff;
+            /* Extended purple line */
             border-bottom: 2px solid #bc13fe;
+            padding-bottom: 20px;
             display: inline-block;
             margin-bottom: 30px;
+            width: 100%; /* Make it span width */
+            max-width: 800px; /* Limit max width for aesthetic */
         }
 
         /* Cyan Glow Card (Mobile First etc) */
-        .card-hover:hover {
+        .card-hover:hover, .card-hover:active {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.15);
+            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3); /* Increased for mobile visibility */
             border-color: #00f3ff;
             transition: all 0.3s ease;
         }
 
         /* Purple Glow Card (Services) */
-        .card-hover-purple:hover {
+        .card-hover-purple:hover, .card-hover-purple:active {
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(188, 19, 254, 0.25);
+            box-shadow: 0 10px 30px rgba(188, 19, 254, 0.4); /* Increased for mobile visibility */
             border-color: #bc13fe;
             transition: all 0.3s ease;
         }
 
         /* SUPER Mixed Glow Card (Pricing) */
-        .card-hover-mixed:hover {
+        .card-hover-mixed:hover, .card-hover-mixed:active {
             transform: translateY(-5px);
             box-shadow: 0 0 40px rgba(0, 243, 255, 0.5), 0 0 60px rgba(188, 19, 254, 0.4);
             border-color: #00f3ff; 
@@ -167,10 +171,14 @@
             }
         }
         
-        /* Portfolio Overlay Text */
+        /* Portfolio Overlay Text - Enhanced for Mobile Tap */
         .portfolio-overlay {
             background: rgba(0, 0, 0, 0.85);
             transition: opacity 0.3s ease;
+        }
+        /* Allow active state on mobile to trigger overlay */
+        .group:active .portfolio-overlay {
+            opacity: 1;
         }
     </style>
 </head>
@@ -181,12 +189,17 @@
         <div class="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center h-24">
                 
-                <!-- Logo & Slogan (Left Aligned) -->
-                <div class="flex-shrink-0 flex flex-col justify-center mr-8">
-                    <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none">
-                        Double Wood <span class="text-neonPurple">Design</span>
-                    </a>
-                    <span class="text-white text-opacity-80 italic mt-1 font-bold" style="font-size: 21px !important;">Professional Yet Affordable!</span>
+                <!-- Logo & Text (Left Aligned) -->
+                <div class="flex-shrink-0 flex items-center mr-8">
+                    <!-- Circular Logo -->
+                    <img src="Logo.png" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-14 h-14 rounded-full mr-4 border-2 border-neonPurple" alt="Logo">
+                    
+                    <div class="flex flex-col justify-center">
+                        <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none">
+                            Double Wood <span class="text-neonPurple">Design</span>
+                        </a>
+                        <span class="text-white text-opacity-80 italic mt-1 font-bold" style="font-size: 21px !important;">Professional Yet Affordable!</span>
+                    </div>
                 </div>
 
                 <!-- Desktop Menu (Centered in remaining space) -->
@@ -203,7 +216,7 @@
                     </div>
                 </div>
 
-                <!-- Spacer to balance logo width if needed for perfect centering, otherwise empty -->
+                <!-- Spacer to balance logo width for centering -->
                 <div class="hidden xl:block w-[10px]"></div>
 
                 <!-- Mobile menu button (Right aligned on mobile) -->
@@ -215,10 +228,9 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (Updated for better visibility) -->
+        <!-- Mobile Menu -->
         <div id="mobile-menu" class="fixed top-24 left-0 w-full bg-techDark z-40 xl:hidden overflow-y-auto border-t border-gray-800 shadow-2xl h-screen">
             <div class="px-2 pt-2 pb-20 space-y-1 sm:px-3 flex flex-col items-center text-center">
-                <!-- Padding adjusted to ensure buttons are compact enough to show 4+ on most screens -->
                 <a href="#home" class="mobile-link block px-3 py-4 rounded-md font-bold text-white hover:bg-gray-800 w-full border-b border-gray-800">Home</a>
                 <a href="#web-design" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Web Design</a>
                 <a href="#branding" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Graphic Design</a>
@@ -275,7 +287,8 @@
     <section id="web-design" class="py-24 bg-techCard relative border-t border-gray-800 section-padding">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-16">
-                <h2 class="section-title">Web Design</h2>
+                <!-- 34px Font Size applied via class -->
+                <h2 class="section-title text-34px">Web Design</h2>
                 <p class="max-w-4xl mx-auto text-gray-400">
                     <span class="text-white font-bold">3 Firsts:</span> <span class="text-gray-400">Mobile first, Performance first, SEO first. Not just a website. A digital experience.</span>
                 </p>
@@ -312,41 +325,41 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="order-2 lg:order-1">
-                    <!-- Updated Left Image P001 -->
                     <img src="P001.jpg" onerror="this.src='https://placehold.co/1000x1000?text=P001'" alt="P001" class="rounded-lg shadow-2xl neon-border w-full h-auto object-cover">
                 </div>
                 <div class="order-1 lg:order-2">
-                    <h2 class="section-title">Graphic Design</h2>
+                    <h2 class="section-title text-34px">Graphic Design</h2>
                     <h3 class="mb-6 mt-4">
                         <span class="text-white font-bold">3 Designs:</span> <span class="text-gray-400">Business card design, Flyer design, Logo design</span>
                     </h3>
-                    <p class="text-gray-300 mb-6">
+                    <!-- Changed text color to gray -->
+                    <p class="text-gray-400 mb-6">
                         Tangible Branding for the Real World. Even in a digital world, a physical handshake often comes with a business card. We ensure your offline presence matches your online excellence.
                     </p>
                     <ul class="space-y-4 text-gray-400">
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Custom Business Cards</li>
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Promotional Flyers</li>
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Brochure Layouts</li>
-                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-2 mr-4"></i> Print-Ready Files</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-0.5 mr-4"></i> Custom Business Cards</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-0.5 mr-4"></i> Promotional Flyers</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-0.5 mr-4"></i> Brochure Layouts</li>
+                        <li class="flex items-start"><i class="fas fa-check text-neonPurple mt-0.5 mr-4"></i> Print-Ready Files</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MEDIA MANAGEMENT (Formerly Social) -->
+    <!-- MEDIA MANAGEMENT -->
     <section id="social" class="py-24 bg-techCard border-t border-gray-800 section-padding">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             
             <div class="grid lg:grid-cols-2 gap-12 items-center mb-16">
                 <div>
-                    <h2 class="section-title">Media Management</h2>
+                    <h2 class="section-title text-34px">Media Management</h2>
                     <p class="mb-8">
-                        <span class="text-white font-bold">3 Management Services:</span> <span class="text-gray-400">Social media management, Content creation management, Advertising management. Connecting you with the local community on Facebook, Instagram, and Threads.</span>
+                        <!-- Updated with line break -->
+                        <span class="text-white font-bold">3 Management Services:</span> <span class="text-gray-400">Social media management, Content creation management, Advertising management.<br><br>Connecting you with the local community on Facebook, Instagram, and Threads.</span>
                     </p>
                     
                     <div class="grid md:grid-cols-2 gap-6">
-                        <!-- 1. Social Media Management -->
                         <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
                             <div class="flex space-x-3 mb-4">
                                 <i class="fab fa-facebook text-blue-500"></i>
@@ -356,22 +369,16 @@
                             <strong class="text-white block mb-2">Social media management</strong>
                             <p class="text-gray-400 text-sm">We manage your Facebook, Instagram, Threads, and Google Business Profile to promote your business.</p>
                         </div>
-                        
-                        <!-- 2. Content Creation Management -->
                         <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
                             <i class="fas fa-pen-fancy text-pink-500 mb-4 block"></i>
                             <strong class="text-white block mb-2">Content Creation Management</strong>
                             <p class="text-gray-400 text-sm">You provide the post topics. We write the content so you can focus on your business.</p>
                         </div>
-
-                        <!-- 3. Advertising Management -->
                         <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
                             <i class="fas fa-bullhorn text-green-500 mb-4 block"></i>
                             <strong class="text-white block mb-2">Advertising Management</strong>
                             <p class="text-gray-400 text-sm">We manage your Google Ads and Facebook Ads to help grow your business.</p>
                         </div>
-
-                        <!-- 4. Visual Design -->
                         <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition">
                             <i class="fas fa-image text-blue-700 mb-4 block"></i>
                             <strong class="text-white block mb-2">Visual Design</strong>
@@ -380,20 +387,18 @@
                     </div>
                 </div>
                 
-                <!-- The image, Flipped Horizontally -->
                 <div class="relative">
                     <img src="https://images.unsplash.com/photo-1634942537034-2531766767d1?q=80&w=2070&auto=format&fit=crop" alt="Social Media Branding" class="rounded-lg shadow-2xl neon-border flip-horizontal">
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- DESIGN TERMINOLOGY -->
-    <section id="terminology" class="py-24 bg-techDark border-t border-gray-800 section-padding">
+    <section id="terminology" class="py-24 bg-techDark border-t border-gray-800 section-padding text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title mb-12">Design Terminology</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+            <h2 class="section-title text-34px">Design Terminology</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10 text-left">
                 <!-- Original Items -->
                 <div class="space-y-2">
                     <h3 class="text-neonCyan font-bold">UI (User Interface)</h3>
@@ -447,8 +452,6 @@
                     <h3 class="text-neonCyan font-bold">Google Business Profile</h3>
                     <p class="text-gray-400">Your business listing on Google Maps and Search. Crucial for local SEO.</p>
                 </div>
-
-                <!-- New Added Items -->
                 <div class="space-y-2">
                     <h3 class="text-neonCyan font-bold">Google Analytics</h3>
                     <p class="text-gray-400">A web analytics service offered by Google that tracks and reports website traffic.</p>
@@ -469,71 +472,71 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO (Images Updated P002-P008) -->
-    <section id="portfolio" class="py-24 bg-techCard border-t border-gray-800 section-padding">
+    <!-- PORTFOLIO -->
+    <section id="portfolio" class="py-24 bg-techCard border-t border-gray-800 section-padding text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title mb-12">Our Portfolio</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 class="section-title text-34px">Our Portfolio</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
                 <!-- P002 -->
-                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover">
                     <img src="P002.jpg" onerror="this.src='https://placehold.co/618x1000?text=P002'" alt="P002" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2">Japanese Style Hair Salon Website</h3>
+                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Japanese Style Hair Salon Website</h3>
                         </div>
                     </div>
                 </div>
                 <!-- P003 -->
-                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover">
                     <img src="P003.jpg" onerror="this.src='https://placehold.co/618x1000?text=P003'" alt="P003" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2">Online Booking System</h3>
+                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Online Booking System</h3>
                         </div>
                     </div>
                 </div>
                 <!-- P004 -->
-                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover">
                     <img src="P004.jpg" onerror="this.src='https://placehold.co/618x1000?text=P004'" alt="P004" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2">Worldwide Public Holidays System</h3>
+                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Worldwide Public Holidays System</h3>
                         </div>
                     </div>
                 </div>
                 <!-- P005 -->
-                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover">
                     <img src="P005.jpg" onerror="this.src='https://placehold.co/618x1000?text=P005'" alt="P005" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2">Customer Registration System</h3>
+                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Customer Registration System</h3>
                         </div>
                     </div>
                 </div>
                 <!-- P006 -->
-                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover">
                     <img src="P006.jpg" onerror="this.src='https://placehold.co/618x1000?text=P006'" alt="P006" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2">Job Showcase Board System</h3>
+                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Job Showcase Board System</h3>
                         </div>
                     </div>
                 </div>
                 <!-- P007 -->
-                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover">
                     <img src="P007.jpg" onerror="this.src='https://placehold.co/618x1000?text=P007'" alt="P007" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2">Data Input and Calculator System</h3>
+                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Data Input and Calculator System</h3>
                         </div>
                     </div>
                 </div>
                 <!-- P008 -->
-                <div class="group relative overflow-hidden rounded-xl border border-gray-700">
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover">
                     <img src="P008.jpg" onerror="this.src='https://placehold.co/618x1000?text=P008'" alt="P008" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
                         <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2">Chinese Website and Countdown Timer</h3>
+                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Chinese Website and Countdown Timer</h3>
                         </div>
                     </div>
                 </div>
@@ -542,31 +545,29 @@
     </section>
 
     <!-- PLANS & PRICING -->
-    <section id="plans" class="py-24 bg-techDark border-t border-gray-800 section-padding">
+    <section id="plans" class="py-24 bg-techDark border-t border-gray-800 section-padding text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title mb-2">Pricing</h2>
+            <h2 class="section-title text-34px">Pricing</h2>
             <p class="mb-12">
                 <span class="text-white font-bold">3 “S” plans:</span> <span class="text-gray-400">Starter, Standard, and Super. One plan is Suitable for you.</span>
             </p>
-            <div class="grid lg:grid-cols-3 gap-8 items-end">
+            <div class="grid lg:grid-cols-3 gap-8 items-end text-left">
                 
                 <!-- Starter -->
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full">
                     <h3 class="pricing-title font-bold text-white mb-2">Starter</h3>
-                    <!-- Updated Pricing Format -->
-                    <div class="text-neonCyan font-bold mb-6">
+                    <div class="text-neonCyan font-bold mb-6 text-34px">
                         $299<br>
                         <span class="text-sm font-normal text-gray-300">2 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>2 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Free Hosting at Google Sites</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <!-- Updated -->
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Footer: Double Wood Design</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>2 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Free Hosting at Google Sites</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Footer: Double Wood Design</div></li>
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
                 </div>
@@ -575,21 +576,19 @@
                 <div class="bg-gray-800 border-2 border-neonPurple p-8 rounded-2xl relative shadow-[0_0_30px_rgba(188,19,254,0.2)] card-hover-mixed transition h-full">
                     <div class="absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-lg rounded-bl-lg font-bold">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Standard</h3>
-                    <!-- Updated Pricing Format -->
-                    <div class="text-neonPurple font-bold mb-6">
+                    <div class="text-neonPurple font-bold mb-6 text-34px">
                         $699<br>
                         <span class="text-sm font-normal text-gray-300">6 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-300 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>6 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Free Hosting at Cloudflare</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Chinese Translation</div></li>
-                        <!-- Added below Chinese Translation -->
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-1"></i></div><div>Footer: Double Wood Design</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>6 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>Free Hosting at Cloudflare</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>Chinese Translation</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple mt-0.5"></i></div><div>Footer: Double Wood Design</div></li>
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-neonPurple text-white py-3 rounded hover:bg-white hover:text-purple-700 transition font-bold">Select Plan</a>
                 </div>
@@ -597,19 +596,18 @@
                 <!-- Super -->
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full">
                     <h3 class="pricing-title font-bold text-white mb-2">Super</h3>
-                    <!-- Updated Pricing Format -->
-                    <div class="text-neonCyan font-bold mb-6">
+                    <div class="text-neonCyan font-bold mb-6 text-34px">
                         $999<br>
                         <span class="text-sm font-normal text-gray-300">10 days of unlimited revisions</span>
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>10 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Free Hosting at Cloudflare</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-1"></i></div><div>Chinese Translation</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>10 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Mobile Responsive</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Free Hosting at Cloudflare</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Basic SEO</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Embed Google Maps and Social Media</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 mt-0.5"></i></div><div>Chinese Translation</div></li>
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
                 </div>
@@ -620,9 +618,10 @@
     <!-- CONTACT US -->
     <section id="contact" class="py-24 bg-techCard border-t border-gray-800 section-padding">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="section-title text-center block mb-4">Contact Us</h2>
+            <h2 class="section-title text-center block mb-4 text-34px">Contact Us</h2>
             <h3 class="text-center mb-8">
-                <span class="text-white font-bold">WhatsApp, FB Messenger, Contact Form. Proudly helping Kiwi business grow.</span>
+                <!-- Color updated to match Pricing Subtitle (text-gray-400) -->
+                <span class="text-gray-400 font-bold">3 Contact Methods: WhatsApp, FB Messenger, Contact Form. Proudly helping Kiwi business grow.</span>
             </h3>
             
             <!-- 3 Contact Buttons -->
@@ -656,7 +655,6 @@
                         <!-- Increased height to 68px -->
                         <select class="w-full h-[68px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
                             <option>Web Design</option>
-                            <!-- Removed Headers -->
                             <option value="Business Card Design">Business Card Design</option>
                             <option value="Flyer Design">Flyer Design</option>
                             <option value="Logo Design">Logo Design</option>
@@ -674,8 +672,6 @@
                         SEND MESSAGE
                     </button>
                 </form>
-
-                <!-- Removed Proudly helping... from here as requested -->
             </div>
         </div>
     </section>
@@ -683,9 +679,7 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 border-t border-gray-800 text-center">
         <p class="text-gray-500">
-            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <br>
-            <!-- V1.6 Visible and White -->
-            <span class="text-white mt-1 block select-none">V1.6</span>
+            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. V1.7
         </p>
     </footer>
 
