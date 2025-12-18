@@ -42,11 +42,9 @@
                     fontFamily: {
                         sans: ['Roboto', 'sans-serif'],
                         tech: ['Orbitron', 'sans-serif'],
-                        // Mobile specific font size definition if needed
                     },
                     screens: {
                         '2xl': '1536px', // Standard Tailwind 2xl
-                        // You can add custom breakpoints if needed, but 2xl is good for preventing overlap on laptops
                     }
                 }
             }
@@ -83,7 +81,7 @@
             line-height: 1.3 !important;
         }
         
-        /* Mobile specific font override for Logo/Slogan as requested (18px) */
+        /* Mobile specific font override for Logo/Slogan (18px) */
         @media (max-width: 640px) {
             .mobile-text-18 {
                 font-size: 18px !important;
@@ -117,7 +115,7 @@
             transform: translateX(0);
         }
 
-        /* Section Title Styling - Extended Line */
+        /* Section Title Styling */
         .section-title {
             font-family: 'Orbitron', sans-serif;
             font-weight: 900;
@@ -132,7 +130,7 @@
             max-width: 800px;
         }
 
-        /* Glow Card - Updated for easy tap on mobile */
+        /* Glow Card */
         .card-hover:hover, .card-hover:active, .card-hover:focus {
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(0, 243, 255, 0.3);
@@ -180,7 +178,6 @@
             }
         }
         
-        /* Portfolio Overlay Text - Enhanced for Mobile Tap */
         .portfolio-overlay {
             background: rgba(0, 0, 0, 0.85);
             transition: opacity 0.3s ease;
@@ -200,23 +197,20 @@
             <div class="flex items-center justify-between h-24">
                 
                 <!-- Logo & Text -->
-                <!-- Mobile: margin adjustments (-ml-3 for logo, -ml-1 for text) to utilize space -->
                 <div class="flex items-center flex-shrink min-w-0 mr-2 lg:mr-4">
-                    <!-- Circular Logo: w-10 on mobile, w-14 on desktop. Moved left 3px on all screens per request or mobile only? Assuming mostly mobile issue, but applying generally or via md: -->
-                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[3px]" alt="Logo">
+                    <!-- Mobile Logo Left 2px (-ml-[5px]) -->
+                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[5px]" alt="Logo">
                     
-                    <div class="flex flex-col justify-center min-w-0 -ml-[1px]">
-                        <!-- Font size 18px on mobile via class mobile-text-18 -->
+                    <!-- Mobile Text Left 3px (-ml-[4px]) -->
+                    <div class="flex flex-col justify-center min-w-0 -ml-[4px]">
                         <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none whitespace-nowrap mobile-text-18">
                             Double Wood <span class="text-neonPurple">Design</span>
                         </a>
-                        <!-- Font size 18px on mobile -->
                         <span class="text-white text-opacity-80 italic mt-1 font-bold whitespace-nowrap mobile-text-18">Professional Yet Affordable!</span>
                     </div>
                 </div>
 
                 <!-- Desktop Menu -->
-                <!-- Changed from xl:flex to 2xl:flex to prevent overlap on smaller laptops (approx 1366px-1500px) -->
                 <div class="hidden 2xl:flex flex-1 justify-center">
                     <div class="flex items-center space-x-1">
                         <a href="#home" class="nav-link text-center min-w-[90px] hover:text-neonCyan transition px-2 py-2 rounded-full font-bold text-white">Home</a>
@@ -226,6 +220,8 @@
                         <a href="#terminology" class="nav-link text-center min-w-[190px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Design Terminology</a>
                         <a href="#portfolio" class="nav-link text-center min-w-[100px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Portfolio</a>
                         <a href="#plans" class="nav-link text-center min-w-[90px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Pricing</a>
+                        <!-- Added Why Us -->
+                        <a href="#why-us" class="nav-link text-center min-w-[100px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Why Us</a>
                         <a href="#contact" class="nav-link text-center min-w-[120px] hover:text-neonCyan transition px-2 py-2 rounded-full font-medium text-gray-300">Contact Us</a>
                     </div>
                 </div>
@@ -233,9 +229,8 @@
                 <!-- Spacer -->
                 <div class="hidden 2xl:block w-[10px]"></div>
 
-                <!-- Mobile menu button -->
-                <!-- Changed from xl:hidden to 2xl:hidden to show hamburger on smaller laptops -->
-                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[7px]">
+                <!-- Mobile menu button - Right 3px (-mr-[10px]) -->
+                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[10px]">
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2">
                         <i class="fas fa-bars fa-lg"></i>
                     </button>
@@ -253,6 +248,7 @@
                 <a href="#terminology" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Design Terminology</a>
                 <a href="#portfolio" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Portfolio</a>
                 <a href="#plans" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Pricing</a>
+                <a href="#why-us" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Why Us</a>
                 <a href="#contact" class="mobile-link block px-3 py-4 rounded-md font-medium hover:bg-gray-800 w-full border-b border-gray-800">Contact Us</a>
             </div>
         </div>
@@ -340,7 +336,6 @@
                     <img src="P001.jpg" onerror="this.src='https://placehold.co/1000x1000?text=P001'" alt="P001" class="rounded-lg shadow-2xl neon-border w-full h-auto object-cover">
                 </div>
                 <div class="order-1 lg:order-2 text-center lg:text-left">
-                    <!-- Added text-center to container above, keeping standard flow -->
                     <h2 class="section-title text-34px text-center lg:text-left">Graphic Design</h2>
                     <h3 class="mb-6 mt-4">
                         <span class="text-white font-bold">3 Designs:</span> <span class="text-gray-400">Business card design, Flyer design, Logo design</span>
@@ -567,11 +562,11 @@
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
                     <h3 class="pricing-title font-bold text-white mb-2">Starter</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px">
-                        $299<br>
-                        <span class="text-sm font-normal text-gray-300">2 days of unlimited revisions</span>
+                        $299
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>2 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>2 Days of Unlimited Revisions</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Free Hosting at Google Sites</div></li>
@@ -587,11 +582,11 @@
                     <div class="absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-lg rounded-bl-lg font-bold">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Standard</h3>
                     <div class="text-neonPurple font-bold mb-6 text-34px">
-                        $699<br>
-                        <span class="text-sm font-normal text-gray-300">6 days of unlimited revisions</span>
+                        $699
                     </div>
                     <ul class="space-y-4 text-gray-300 mb-8">
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>6 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>6 Days of Unlimited Revisions</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Free Hosting at Cloudflare</div></li>
@@ -607,11 +602,11 @@
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
                     <h3 class="pricing-title font-bold text-white mb-2">Super</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px">
-                        $999<br>
-                        <span class="text-sm font-normal text-gray-300">10 days of unlimited revisions</span>
+                        $999
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8">
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>10 Pages Website</div></li>
+                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>10 Days of Unlimited Revisions</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Free Hosting at Cloudflare</div></li>
@@ -620,6 +615,45 @@
                         <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Chinese Translation</div></li>
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- WHY US SECTION -->
+    <section id="why-us" class="py-24 bg-techCard border-t border-gray-800 section-padding">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="section-title text-34px">WHY US</h2>
+                <p class="max-w-4xl mx-auto text-white text-xl font-bold mb-4">
+                    How do we protect our clients’ interests?
+                </p>
+                <p class="text-neonCyan mb-8">
+                    3 Reasons: No satisfaction, no charge. Chinese market expertise. Great value.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 1st Reason -->
+                <div class="bg-techDark p-8 rounded-xl border border-gray-700 hover:border-neonCyan transition">
+                    <div class="text-neonCyan font-bold text-xl mb-4">1st: Risk Free</div>
+                    <p class="text-gray-400">
+                        We offer a "free" first draft. You pay a deposit only if you like the first draft design. You pay the balance only after you are satisfied. If you do not like the first draft, you pay $0.
+                    </p>
+                </div>
+                <!-- 2nd Reason -->
+                <div class="bg-techDark p-8 rounded-xl border border-gray-700 hover:border-neonPurple transition">
+                    <div class="text-neonPurple font-bold text-xl mb-4">2nd: Chinese Expertise</div>
+                    <p class="text-gray-400">
+                        We are Chinese and provide "free" accurate Chinese translation to help you reach the Chinese market.
+                    </p>
+                </div>
+                <!-- 3rd Reason -->
+                <div class="bg-techDark p-8 rounded-xl border border-gray-700 hover:border-neonCyan transition">
+                    <div class="text-neonCyan font-bold text-xl mb-4">3rd: Best Value</div>
+                    <p class="text-gray-400">
+                        We are professional and affordable. No hidden fees. No maintenance fees. No monthly fees. No ongoing costs. Fixed price, so you know your real budget.
+                    </p>
                 </div>
             </div>
         </div>
@@ -648,20 +682,17 @@
 
             <!-- Form Container -->
             <div id="contact-form-container" class="bg-techDark p-8 rounded-2xl border border-gray-700 shadow-2xl text-left">
-                <!-- IMPORTANT: Form names MUST match Google Sheet Headers -->
                 <form name="submit-to-google-sheet">
                     <div class="grid grid-cols-1 gap-8">
                         <div>
                             <label class="block text-neonCyan mb-2 font-bold transform translate-y-[2px]">Name</label>
                             <input type="text" name="Name" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="John" required>
                         </div>
-                        <!-- Increased gap-8 in parent grid handles Email spacing, but specifically margin added -->
                         <div class="mt-2">
                             <label class="block text-neonCyan mb-2 font-bold transform translate-y-[2px]">Email</label>
                             <input type="email" name="Email" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="john@example.co.nz" required>
                         </div>
                     </div>
-                    <!-- Added extra margin top -->
                     <div class="mt-8">
                         <label class="block text-neonCyan mb-2 font-bold transform translate-y-[2px]">Service Interest</label>
                         <select name="Service" class="w-full h-[68px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
@@ -676,7 +707,6 @@
                             <option value="Other">Other</option>
                         </select>
                     </div>
-                    <!-- Added extra margin top -->
                     <div class="mt-8">
                         <label class="block text-neonCyan mb-2 font-bold transform translate-y-[2px]">Message</label>
                         <textarea name="Message" rows="4" class="w-full bg-gray-900 border border-gray-700 rounded p-4 text-white focus:outline-none focus:border-neonPurple transition" placeholder="Tell us about your project..." required></textarea>
@@ -694,7 +724,7 @@
     <footer class="bg-black py-12 border-t border-gray-800 text-center">
         <p class="text-gray-500">
             Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <br>
-            <span class="text-black mt-2 block select-none">V1.10</span>
+            <span class="text-white mt-1 block select-none">V1.11</span>
         </p>
     </footer>
 
@@ -751,7 +781,8 @@
         });
 
         // GOOGLE SHEETS FORM SUBMISSION SCRIPT
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxcz1XlhfR6TYkWmvcLZtLrZ1crPSRSBDl_d8x92sNfewzAKGyUdo8rrytn_YFeRH1FVw/exec'; // <--- REPLACE THIS LATER
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxcz1XlhfR6TYkWmvcLZtLrZ1crPSRSBDl_d8x92sNfewzAKGyUdo8rrytn_YFeRH1FVw/exec
+'; // <--- REPLACE THIS LATER
         const form = document.forms['submit-to-google-sheet'];
         const statusMsg = document.getElementById('form-status');
 
@@ -767,10 +798,8 @@
             statusMsg.classList.remove('hidden', 'text-red-500');
             statusMsg.classList.add('text-green-400');
 
-            // Use mode: 'no-cors' to prevent CORS errors since we can't read the JSON response directly due to Google's redirect
             fetch(scriptURL, { method: 'POST', body: new FormData(form), mode: 'no-cors'})
                 .then(() => {
-                    // With no-cors, we assume success if no network error occurred
                     statusMsg.innerHTML = "Message Sent Successfully! We will contact you soon.";
                     form.reset();
                     setTimeout(() => {
