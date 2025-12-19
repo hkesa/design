@@ -156,7 +156,7 @@
             outline: none;
         }
         
-        /* Popular Purple Glow (New) */
+        /* Popular Purple Glow */
         .card-hover-popular:hover, .card-hover-popular:active, .card-hover-popular:focus {
             transform: translateY(-5px);
             box-shadow: 0 0 40px rgba(188, 19, 254, 0.6), 0 0 60px rgba(188, 19, 254, 0.4);
@@ -188,6 +188,18 @@
             color: #e0e0e0;
             border: 1px solid #333;
         }
+        
+        /* Portfolio Tab Active State */
+        .portfolio-tab.active {
+            background-color: #bc13fe;
+            color: #ffffff;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(188, 19, 254, 0.6);
+        }
+        .portfolio-tab {
+            color: #e0e0e0;
+            border: 1px solid #333;
+        }
 
         .flip-horizontal {
             transform: scaleX(-1);
@@ -209,6 +221,11 @@
         .group:hover .portfolio-overlay {
             opacity: 1;
         }
+        
+        /* Custom Corner Radius for Popular Badge to fix 1px issue */
+        .rounded-tr-custom {
+            border-top-right-radius: 15px; /* Slightly less than 16px to fit inside border */
+        }
     </style>
 </head>
 <body class="bg-techDark text-textGray font-sans antialiased overflow-x-hidden">
@@ -220,11 +237,11 @@
                 
                 <!-- Logo & Text -->
                 <div class="flex items-center flex-shrink min-w-0 mr-2 lg:mr-4">
-                    <!-- Mobile Logo Left Adjust (-ml-[10px]) -->
-                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[10px]" alt="Logo">
+                    <!-- Mobile Logo Left Adjust (-ml-[11px]) -->
+                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[11px]" alt="Logo">
                     
-                    <!-- Mobile Text Left Adjust (-ml-[10px]) -->
-                    <div class="flex flex-col justify-center min-w-0 -ml-[10px]">
+                    <!-- Mobile Text Left Adjust (-ml-[12px]) -->
+                    <div class="flex flex-col justify-center min-w-0 -ml-[12px]">
                         <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none whitespace-nowrap mobile-text-18">
                             Double Wood <span class="text-neonPurple">Design</span>
                         </a>
@@ -250,8 +267,8 @@
                 <!-- Spacer -->
                 <div class="hidden 2xl:block w-[10px]"></div>
 
-                <!-- Mobile menu button - Right Adjust (-mr-[18px]) -->
-                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[18px] relative z-50">
+                <!-- Mobile menu button - Right Adjust (-mr-[21px]) -->
+                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[21px] relative z-50">
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 cursor-pointer">
                         <i class="fas fa-bars fa-lg"></i>
                     </button>
@@ -498,82 +515,113 @@
         </div>
     </section>
 
-    <!-- PORTFOLIO -->
+    <!-- PORTFOLIO (Updated with Tabs) -->
     <section id="portfolio" class="py-24 bg-techCard border-t border-gray-800 section-padding text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Our Portfolio</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+            
+            <!-- Portfolio Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="portfolio-tab px-6 py-3 rounded-full font-bold active transition" onclick="switchPortfolio('web')">Web Design</button>
+                <button class="portfolio-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPortfolio('graphic')">Graphic Design</button>
+                <button class="portfolio-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPortfolio('social')">Social Media Management</button>
+            </div>
+
+            <!-- Content Container -->
+            <!-- Web Design (2 per row) -->
+            <div id="portfolio-web" class="grid md:grid-cols-2 gap-6 text-left">
+                <!-- P002 to P008 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P002.jpg" onerror="this.src='https://placehold.co/618x1000?text=P002'" alt="P002" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Japanese Style Hair Salon Website</h3>
-                        </div>
+                        <div class="text-center p-4"><h3 class="text-neonCyan font-bold mb-2 text-34px">Japanese Style Hair Salon Website</h3></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P003.jpg" onerror="this.src='https://placehold.co/618x1000?text=P003'" alt="P003" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Online Booking System</h3>
-                        </div>
+                        <div class="text-center p-4"><h3 class="text-neonCyan font-bold mb-2 text-34px">Online Booking System</h3></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P004.jpg" onerror="this.src='https://placehold.co/618x1000?text=P004'" alt="P004" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Worldwide Public Holidays System</h3>
-                        </div>
+                        <div class="text-center p-4"><h3 class="text-neonCyan font-bold mb-2 text-34px">Worldwide Public Holidays System</h3></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P005.jpg" onerror="this.src='https://placehold.co/618x1000?text=P005'" alt="P005" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Customer Registration System</h3>
-                        </div>
+                        <div class="text-center p-4"><h3 class="text-neonCyan font-bold mb-2 text-34px">Customer Registration System</h3></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P006.jpg" onerror="this.src='https://placehold.co/618x1000?text=P006'" alt="P006" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Job Showcase Board System</h3>
-                        </div>
+                        <div class="text-center p-4"><h3 class="text-neonCyan font-bold mb-2 text-34px">Job Showcase Board System</h3></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P007.jpg" onerror="this.src='https://placehold.co/618x1000?text=P007'" alt="P007" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Data Input and Calculator System</h3>
-                        </div>
+                        <div class="text-center p-4"><h3 class="text-neonCyan font-bold mb-2 text-34px">Data Input and Calculator System</h3></div>
                     </div>
                 </div>
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P008.jpg" onerror="this.src='https://placehold.co/618x1000?text=P008'" alt="P008" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
-                        <div class="text-center p-4">
-                            <h3 class="text-neonCyan font-bold mb-2 text-34px">Chinese Website and Countdown Timer</h3>
-                        </div>
+                        <div class="text-center p-4"><h3 class="text-neonCyan font-bold mb-2 text-34px">Chinese Website and Countdown Timer</h3></div>
                     </div>
+                </div>
+            </div>
+
+            <!-- Graphic Design -->
+            <div id="portfolio-graphic" class="grid md:grid-cols-3 gap-6 text-left hidden">
+                <!-- P011-P016 -->
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P011.jpg" onerror="this.src='https://placehold.co/618x1000?text=P011'" alt="P011" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P012.jpg" onerror="this.src='https://placehold.co/618x1000?text=P012'" alt="P012" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P013.jpg" onerror="this.src='https://placehold.co/618x1000?text=P013'" alt="P013" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P014.jpg" onerror="this.src='https://placehold.co/618x1000?text=P014'" alt="P014" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P015.jpg" onerror="this.src='https://placehold.co/618x1000?text=P015'" alt="P015" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P016.jpg" onerror="this.src='https://placehold.co/618x1000?text=P016'" alt="P016" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
+                </div>
+            </div>
+
+            <!-- Social Media -->
+            <div id="portfolio-social" class="grid md:grid-cols-3 gap-6 text-left hidden">
+                <!-- P009, P010 -->
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P009.jpg" onerror="this.src='https://placehold.co/618x1000?text=P009'" alt="P009" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
+                </div>
+                <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
+                    <img src="P010.jpg" onerror="this.src='https://placehold.co/618x1000?text=P010'" alt="P010" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- PLANS & PRICING (Updated with Tabs) -->
+    <!-- PLANS & PRICING -->
     <section id="plans" class="py-24 bg-techDark border-t border-gray-800 section-padding text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Pricing</h2>
             
             <!-- Pricing Tabs -->
             <div class="flex flex-wrap justify-center gap-4 mb-8">
-                <button class="pricing-tab px-6 py-3 rounded-full font-bold active transition" onclick="switchPricing('web')">Web Design</button>
-                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('graphic')">Graphic Design</button>
-                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('social')">Social Media Management</button>
-                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('ads')">Advertising Management</button>
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold active transition" onclick="switchPricing('web')">Web Design Pricing</button>
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('graphic')">Graphic Design Pricing</button>
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('ads')">Advertising Management Pricing</button>
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('social')">Social Media Management Pricing</button>
             </div>
 
             <p class="mb-12">
@@ -596,7 +644,7 @@
                 
                 <!-- Standard -->
                 <div id="card-standard" class="bg-gray-900 border border-gray-700 p-8 rounded-2xl transition h-full relative" tabindex="0" onclick="void(0)">
-                    <div id="standard-badge" class="absolute top-0 right-0 text-white px-4 py-1 rounded-tr-2xl rounded-bl-lg font-bold hidden">POPULAR</div>
+                    <div id="standard-badge" class="absolute top-0 right-0 text-white px-4 py-1 rounded-tr-custom rounded-bl-lg font-bold hidden">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Standard</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px" id="standard-price">
                         <!-- Dynamic Content -->
@@ -609,7 +657,7 @@
                 
                 <!-- Super -->
                 <div id="card-super" class="bg-gray-900 border border-gray-700 p-8 rounded-2xl transition h-full relative" tabindex="0" onclick="void(0)">
-                    <div id="super-badge" class="absolute top-0 right-0 text-white px-4 py-1 rounded-tr-2xl rounded-bl-lg font-bold hidden">POPULAR</div>
+                    <div id="super-badge" class="absolute top-0 right-0 text-white px-4 py-1 rounded-tr-custom rounded-bl-lg font-bold hidden">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Super</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px" id="super-price">
                         <!-- Dynamic Content -->
@@ -723,7 +771,7 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 border-t border-gray-800 text-center">
         <p class="text-gray-500">
-            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <span style="color: #000001; margin-left: 5px;">V1.15</span>
+            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <span style="color: #000001; margin-left: 5px;">V1.16</span>
         </p>
     </footer>
 
@@ -733,9 +781,9 @@
         const pricingData = {
             web: {
                 popular: 'standard',
-                starter: { price: "$299", rev: "2 days of unlimited revisions", items: ["2 Pages Website", "2 Days of Unlimited Revisions", "Basic SEO", "100% Satisfaction Guarantee", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Google Sites", "Embed Google Maps and Social Media", "Footer: Double Wood Design"] },
-                standard: { price: "$699", rev: "6 days of unlimited revisions", items: ["6 Pages Website", "6 Days of Unlimited Revisions", "Basic SEO", "100% Satisfaction Guarantee", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Embed Google Maps and Social Media", "Chinese Translation", "Footer: Double Wood Design"] },
-                super: { price: "$999", rev: "10 days of unlimited revisions", items: ["10 Pages Website", "10 Days of Unlimited Revisions", "Basic SEO", "100% Satisfaction Guarantee", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Embed Google Maps and Social Media", "Chinese Translation"] }
+                starter: { price: "$299", rev: "2 days of unlimited revisions", items: ["2 Pages Website", "2 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "Basic SEO", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Google Sites", "Embed Google Maps and Social Media", "Footer: Double Wood Design"] },
+                standard: { price: "$699", rev: "6 days of unlimited revisions", items: ["6 Pages Website", "6 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "Basic SEO", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Embed Google Maps and Social Media", "Chinese Translation", "Footer: Double Wood Design"] },
+                super: { price: "$999", rev: "10 days of unlimited revisions", items: ["10 Pages Website", "10 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "Basic SEO", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Embed Google Maps and Social Media", "Chinese Translation"] }
             },
             graphic: {
                 popular: 'super',
@@ -760,7 +808,7 @@
         function switchPricing(type) {
             // Update Active Tab Button
             document.querySelectorAll('.pricing-tab').forEach(btn => btn.classList.remove('active'));
-            const index = type === 'web' ? 0 : type === 'graphic' ? 1 : type === 'social' ? 2 : 3;
+            const index = type === 'web' ? 0 : type === 'graphic' ? 1 : type === 'ads' ? 2 : 3;
             document.querySelectorAll('.pricing-tab')[index].classList.add('active');
 
             // Update Content
@@ -802,7 +850,7 @@
                 card.classList.remove('border-gray-700', 'card-hover-mixed');
                 if(badge) {
                     badge.classList.remove('hidden');
-                    badge.className = "absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-2xl rounded-bl-lg font-bold";
+                    badge.className = "absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-custom rounded-bl-lg font-bold";
                 }
             } else {
                 // Apply Default style
@@ -811,10 +859,26 @@
                 if(badge) badge.classList.add('hidden');
             }
         }
+        
+        function switchPortfolio(type) {
+            // Update Active Tab Button
+            document.querySelectorAll('.portfolio-tab').forEach(btn => btn.classList.remove('active'));
+            const index = type === 'web' ? 0 : type === 'graphic' ? 1 : 2;
+            document.querySelectorAll('.portfolio-tab')[index].classList.add('active');
+            
+            // Hide all lists
+            document.getElementById('portfolio-web').classList.add('hidden');
+            document.getElementById('portfolio-graphic').classList.add('hidden');
+            document.getElementById('portfolio-social').classList.add('hidden');
+            
+            // Show selected
+            document.getElementById(`portfolio-${type}`).classList.remove('hidden');
+        }
 
         // Init
         document.addEventListener('DOMContentLoaded', () => {
             switchPricing('web');
+            switchPortfolio('web');
 
             // Mobile Menu Logic
             const btn = document.getElementById('mobile-menu-btn');
@@ -877,9 +941,9 @@
                 form.addEventListener('submit', e => {
                     e.preventDefault();
                     
-                    // Change button text
+                    // Change button text - Corrected string with no ellipsis
                     const originalBtnText = submitBtn.innerText;
-                    submitBtn.innerText = "Sending, please wait...";
+                    submitBtn.innerText = "Sending, please wait";
                     submitBtn.disabled = true;
 
                     statusMsg.innerHTML = "Sending, please wait...";
