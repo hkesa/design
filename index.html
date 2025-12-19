@@ -155,6 +155,16 @@
             z-index: 10;
             outline: none;
         }
+        
+        /* Popular Purple Glow (New) */
+        .card-hover-popular:hover, .card-hover-popular:active, .card-hover-popular:focus {
+            transform: translateY(-5px);
+            box-shadow: 0 0 40px rgba(188, 19, 254, 0.6), 0 0 60px rgba(188, 19, 254, 0.4);
+            border-color: #bc13fe;
+            transition: all 0.3s ease;
+            z-index: 10;
+            outline: none;
+        }
 
         /* Active Navigation State */
         .nav-link.active {
@@ -493,7 +503,6 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Our Portfolio</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
-                <!-- P002 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P002.jpg" onerror="this.src='https://placehold.co/618x1000?text=P002'" alt="P002" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -502,7 +511,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P003 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P003.jpg" onerror="this.src='https://placehold.co/618x1000?text=P003'" alt="P003" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -511,7 +519,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P004 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P004.jpg" onerror="this.src='https://placehold.co/618x1000?text=P004'" alt="P004" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -520,7 +527,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P005 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P005.jpg" onerror="this.src='https://placehold.co/618x1000?text=P005'" alt="P005" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -529,7 +535,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P006 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P006.jpg" onerror="this.src='https://placehold.co/618x1000?text=P006'" alt="P006" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -538,7 +543,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P007 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P007.jpg" onerror="this.src='https://placehold.co/618x1000?text=P007'" alt="P007" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -547,7 +551,6 @@
                         </div>
                     </div>
                 </div>
-                <!-- P008 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P008.jpg" onerror="this.src='https://placehold.co/618x1000?text=P008'" alt="P008" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -564,26 +567,26 @@
     <section id="plans" class="py-24 bg-techDark border-t border-gray-800 section-padding text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Pricing</h2>
-            <p class="mb-8">
-                <span class="text-white font-bold">3 “S” plans:</span> <span class="text-gray-400">Starter, Standard, and Super. One plan is Suitable for you.</span>
-            </p>
-
+            
             <!-- Pricing Tabs -->
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
+            <div class="flex flex-wrap justify-center gap-4 mb-8">
                 <button class="pricing-tab px-6 py-3 rounded-full font-bold active transition" onclick="switchPricing('web')">Web Design</button>
                 <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('graphic')">Graphic Design</button>
                 <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('social')">Social Media Management</button>
                 <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('ads')">Advertising Management</button>
             </div>
 
+            <p class="mb-12">
+                <span class="text-white font-bold">3 “S” plans:</span> <span class="text-gray-400">Starter, Standard, and Super. One plan is Suitable for you.</span>
+            </p>
+
             <div class="grid lg:grid-cols-3 gap-8 items-end text-left">
                 
                 <!-- Starter -->
-                <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
+                <div id="card-starter" class="bg-gray-900 border border-gray-700 p-8 rounded-2xl transition h-full relative" tabindex="0" onclick="void(0)">
                     <h3 class="pricing-title font-bold text-white mb-2">Starter</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px" id="starter-price">
-                        $299<br>
-                        <span class="text-sm font-normal text-white">2 days of unlimited revisions</span>
+                        <!-- Dynamic Content -->
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8" id="starter-list">
                         <!-- Content injected by JS -->
@@ -592,25 +595,24 @@
                 </div>
                 
                 <!-- Standard -->
-                <div class="bg-gray-800 border-2 border-neonPurple p-8 rounded-2xl relative shadow-[0_0_30px_rgba(188,19,254,0.2)] card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
-                    <div class="absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-lg rounded-bl-lg font-bold">POPULAR</div>
+                <div id="card-standard" class="bg-gray-900 border border-gray-700 p-8 rounded-2xl transition h-full relative" tabindex="0" onclick="void(0)">
+                    <div id="standard-badge" class="absolute top-0 right-0 text-white px-4 py-1 rounded-tr-2xl rounded-bl-lg font-bold hidden">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Standard</h3>
-                    <div class="text-neonPurple font-bold mb-6 text-34px" id="standard-price">
-                        $699<br>
-                        <span class="text-sm font-normal text-white">6 days of unlimited revisions</span>
+                    <div class="text-neonCyan font-bold mb-6 text-34px" id="standard-price">
+                        <!-- Dynamic Content -->
                     </div>
                     <ul class="space-y-4 text-gray-300 mb-8" id="standard-list">
                         <!-- Content injected by JS -->
                     </ul>
-                    <a href="#contact" class="block w-full text-center bg-neonPurple text-white py-3 rounded hover:bg-white hover:text-purple-700 transition font-bold">Select Plan</a>
+                    <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-white hover:text-purple-700 transition font-bold">Select Plan</a>
                 </div>
                 
                 <!-- Super -->
-                <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
+                <div id="card-super" class="bg-gray-900 border border-gray-700 p-8 rounded-2xl transition h-full relative" tabindex="0" onclick="void(0)">
+                    <div id="super-badge" class="absolute top-0 right-0 text-white px-4 py-1 rounded-tr-2xl rounded-bl-lg font-bold hidden">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Super</h3>
                     <div class="text-neonCyan font-bold mb-6 text-34px" id="super-price">
-                        $999<br>
-                        <span class="text-sm font-normal text-white">10 days of unlimited revisions</span>
+                        <!-- Dynamic Content -->
                     </div>
                     <ul class="space-y-4 text-gray-400 mb-8" id="super-list">
                         <!-- Content injected by JS -->
@@ -630,7 +632,6 @@
                     How do we protect our clients’ interests?
                 </p>
                 <p class="text-gray-400 mb-8">
-                    <!-- Changed colors as requested -->
                     <span class="text-white font-bold">3 Reasons:</span> <span class="text-gray-400">No satisfaction, no charge. Chinese market expertise. Great value.</span>
                 </p>
             </div>
@@ -694,7 +695,6 @@
                     </div>
                     <div class="mt-8">
                         <label class="block text-neonCyan mb-2 font-bold transform translate-y-[2px]">Service Interest</label>
-                        <!-- Added required and default empty disabled value -->
                         <select name="Service" required class="w-full h-[68px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
                             <option selected disabled value="">-- Select a Service --</option>
                             <option value="Web Design">Web Design</option>
@@ -723,7 +723,7 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 border-t border-gray-800 text-center">
         <p class="text-gray-500">
-            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <span style="color: #000001; margin-left: 5px;">V1.14</span>
+            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <span style="color: #000001; margin-left: 5px;">V1.15</span>
         </p>
     </footer>
 
@@ -732,56 +732,88 @@
         // Pricing Data
         const pricingData = {
             web: {
-                starter: { price: "$299", rev: "2 days of unlimited revisions", items: ["2 Pages Website", "2 Days of Unlimited Revisions", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Google Sites", "Basic SEO", "Embed Google Maps and Social Media", "Footer: Double Wood Design"] },
-                standard: { price: "$699", rev: "6 days of unlimited revisions", items: ["6 Pages Website", "6 Days of Unlimited Revisions", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Basic SEO", "Embed Google Maps and Social Media", "Chinese Translation", "Footer: Double Wood Design"] },
-                super: { price: "$999", rev: "10 days of unlimited revisions", items: ["10 Pages Website", "10 Days of Unlimited Revisions", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Basic SEO", "Embed Google Maps and Social Media", "Chinese Translation"] }
+                popular: 'standard',
+                starter: { price: "$299", rev: "2 days of unlimited revisions", items: ["2 Pages Website", "2 Days of Unlimited Revisions", "Basic SEO", "100% Satisfaction Guarantee", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Google Sites", "Embed Google Maps and Social Media", "Footer: Double Wood Design"] },
+                standard: { price: "$699", rev: "6 days of unlimited revisions", items: ["6 Pages Website", "6 Days of Unlimited Revisions", "Basic SEO", "100% Satisfaction Guarantee", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Embed Google Maps and Social Media", "Chinese Translation", "Footer: Double Wood Design"] },
+                super: { price: "$999", rev: "10 days of unlimited revisions", items: ["10 Pages Website", "10 Days of Unlimited Revisions", "Basic SEO", "100% Satisfaction Guarantee", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Embed Google Maps and Social Media", "Chinese Translation"] }
             },
             graphic: {
-                starter: { price: "$99", rev: "2 Days of Unlimited Revisions", items: ["2 Design Concepts", "2 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] },
-                standard: { price: "$149", rev: "3 Days of Unlimited Revisions", items: ["3 Design Concepts", "3 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] },
-                super: { price: "$199", rev: "5 Days of Unlimited Revisions", items: ["5 Design Concepts", "5 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] }
+                popular: 'super',
+                starter: { price: "$99", rev: "2 days of unlimited revisions", items: ["2 Design Concepts", "2 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] },
+                standard: { price: "$139", rev: "3 days of unlimited revisions", items: ["3 Design Concepts", "3 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] },
+                super: { price: "$199", rev: "5 days of unlimited revisions", items: ["5 Design Concepts", "5 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] }
             },
             social: {
-                starter: { price: "$99", rev: "", items: ["1 Post Per Month", "1 Caption & 1 Graphic Design Per Post"] },
-                standard: { price: "$199", rev: "", items: ["2 Post Per Month", "1 Caption & 1 Graphic Design Per Post"] },
-                super: { price: "$299", rev: "", items: ["4 Post Per Month", "1 Caption & 1 Graphic Design Per Post"] }
+                popular: 'super',
+                starter: { price: "$99", rev: "", items: ["1 Post Per Month", "1 Caption & 1 Graphic Design Per Post", "Client Provide Post Topics"] },
+                standard: { price: "$189", rev: "", items: ["2 Post Per Month", "1 Caption & 1 Graphic Design Per Post", "We Create Post Topic For You or Client Provide Topics"] },
+                super: { price: "$299", rev: "", items: ["4 Post Per Month", "1 Caption & 1 Graphic Design Per Post", "We Create Post Topic For You or Client Provide Topics"] }
             },
             ads: {
-                starter: { price: "$199", rev: "", items: ["2 Ads Per Month", "1 Graphic Design Per Ad"] },
-                standard: { price: "$299", rev: "", items: ["3 Ads per month", "1 Graphic Design Per Ad"] },
-                super: { price: "$399", rev: "", items: ["4 Ads per month", "1 Graphic Design Per Ad"] }
+                popular: 'super',
+                starter: { price: "$199", rev: "", items: ["2 Ads Per Month", "1 Graphic Design Per Ad", "Image Ads (Google SEM Ads / YouTube Ads / Facebook Ads / Instagram Ads / Threads Ads)"] },
+                standard: { price: "$249", rev: "", items: ["3 Ads per month", "1 Graphic Design Per Ad", "Image Ads (Google SEM Ads / YouTube Ads / Facebook Ads / Instagram Ads / Threads Ads)"] },
+                super: { price: "$299", rev: "", items: ["4 Ads per month", "1 Graphic Design Per Ad", "Image Ads (Google SEM Ads / YouTube Ads / Facebook Ads / Instagram Ads / Threads Ads)"] }
             }
         };
 
         function switchPricing(type) {
             // Update Active Tab Button
             document.querySelectorAll('.pricing-tab').forEach(btn => btn.classList.remove('active'));
-            // Simple mapping to index
             const index = type === 'web' ? 0 : type === 'graphic' ? 1 : type === 'social' ? 2 : 3;
             document.querySelectorAll('.pricing-tab')[index].classList.add('active');
 
             // Update Content
             const data = pricingData[type];
-            updateCard('starter', data.starter);
-            updateCard('standard', data.standard);
-            updateCard('super', data.super);
+            updateCard('starter', data.starter, data.popular === 'starter');
+            updateCard('standard', data.standard, data.popular === 'standard');
+            updateCard('super', data.super, data.popular === 'super');
         }
 
-        function updateCard(tier, data) {
+        function updateCard(tier, data, isPopular) {
             // Update Price and Revision Text
             const priceHtml = `${data.price}<br><span class="text-sm font-normal text-white">${data.rev}</span>`;
-            document.getElementById(`${tier}-price`).innerHTML = priceHtml;
+            const priceEl = document.getElementById(`${tier}-price`);
+            priceEl.innerHTML = priceHtml;
+            
+            // Set Color based on Popularity
+            if (isPopular) {
+                priceEl.className = "text-neonPurple font-bold mb-6 text-34px";
+            } else {
+                priceEl.className = "text-neonCyan font-bold mb-6 text-34px";
+            }
 
             // Update List
             const listHtml = data.items.map(item => 
-                `<li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check ${tier === 'standard' ? 'text-neonPurple' : 'text-green-400'} transform -translate-y-[1px]"></i></div><div>${item}</div></li>`
+                `<li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check ${isPopular ? 'text-neonPurple' : 'text-green-400'} transform -translate-y-[1px]"></i></div><div>${item}</div></li>`
             ).join('');
             document.getElementById(`${tier}-list`).innerHTML = listHtml;
+
+            // Update Badge and Styles
+            const card = document.getElementById(`card-${tier}`);
+            const badge = document.getElementById(`${tier}-badge`);
+            
+            // Reset base classes
+            card.className = "bg-gray-900 border p-8 rounded-2xl transition h-full relative";
+            
+            if (isPopular) {
+                // Apply Purple style
+                card.classList.add('border-2', 'border-neonPurple', 'card-hover-popular', 'bg-gray-800', 'shadow-[0_0_30px_rgba(188,19,254,0.2)]');
+                card.classList.remove('border-gray-700', 'card-hover-mixed');
+                if(badge) {
+                    badge.classList.remove('hidden');
+                    badge.className = "absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-2xl rounded-bl-lg font-bold";
+                }
+            } else {
+                // Apply Default style
+                card.classList.add('border-gray-700', 'card-hover-mixed');
+                card.classList.remove('border-2', 'border-neonPurple', 'card-hover-popular', 'bg-gray-800', 'shadow-[0_0_30px_rgba(188,19,254,0.2)]');
+                if(badge) badge.classList.add('hidden');
+            }
         }
 
         // Init
         document.addEventListener('DOMContentLoaded', () => {
-            // Initialize with Web Design
             switchPricing('web');
 
             // Mobile Menu Logic
