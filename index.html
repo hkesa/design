@@ -167,6 +167,18 @@
             text-shadow: none;
         }
 
+        /* Pricing Tab Active State */
+        .pricing-tab.active {
+            background-color: #00f3ff;
+            color: #000000;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.6);
+        }
+        .pricing-tab {
+            color: #e0e0e0;
+            border: 1px solid #333;
+        }
+
         .flip-horizontal {
             transform: scaleX(-1);
         }
@@ -198,11 +210,11 @@
                 
                 <!-- Logo & Text -->
                 <div class="flex items-center flex-shrink min-w-0 mr-2 lg:mr-4">
-                    <!-- Mobile Logo Left Adjust (-ml-[9px]) -->
-                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[9px]" alt="Logo">
+                    <!-- Mobile Logo Left Adjust (-ml-[10px]) -->
+                    <img src="logo.jpg" onerror="this.src='https://placehold.co/100x100?text=Logo'" class="w-10 h-10 lg:w-14 lg:h-14 rounded-full mr-2 lg:mr-4 flex-shrink-0 -ml-[10px]" alt="Logo">
                     
-                    <!-- Mobile Text Left Adjust (-ml-[9px]) -->
-                    <div class="flex flex-col justify-center min-w-0 -ml-[9px]">
+                    <!-- Mobile Text Left Adjust (-ml-[10px]) -->
+                    <div class="flex flex-col justify-center min-w-0 -ml-[10px]">
                         <a href="#home" class="font-tech font-bold text-neonCyan tracking-wider hover:text-white transition leading-none whitespace-nowrap mobile-text-18">
                             Double Wood <span class="text-neonPurple">Design</span>
                         </a>
@@ -228,8 +240,8 @@
                 <!-- Spacer -->
                 <div class="hidden 2xl:block w-[10px]"></div>
 
-                <!-- Mobile menu button - Right Adjust (-mr-[16px]) -->
-                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[16px] relative z-50">
+                <!-- Mobile menu button - Right Adjust (-mr-[18px]) -->
+                <div class="2xl:hidden flex items-center flex-shrink-0 ml-2 -mr-[18px] relative z-50">
                     <button id="mobile-menu-btn" class="text-gray-300 hover:text-white focus:outline-none p-2 cursor-pointer">
                         <i class="fas fa-bars fa-lg"></i>
                     </button>
@@ -361,7 +373,7 @@
                 <div class="text-center w-full">
                     <h2 class="section-title text-34px">Media Management</h2>
                     <p class="mb-8 max-w-2xl mx-auto">
-                        <span class="text-white font-bold">3 Management Services:</span> <span class="text-gray-400">Social media management, Content creation management, Advertising management.<br><br>Connecting you with the local community on Facebook, Instagram, and Threads.</span>
+                        <span class="text-white font-bold">3 Management Services:</span> <span class="text-gray-400">Social Media Management, Content creation management, Advertising management.<br><br>Connecting you with the local community on Facebook, Instagram, and Threads.</span>
                     </p>
                     
                     <div class="grid md:grid-cols-2 gap-6 text-left">
@@ -371,7 +383,7 @@
                                 <i class="fab fa-instagram text-pink-500"></i>
                                 <i class="fa-brands fa-threads text-white"></i>
                             </div>
-                            <strong class="text-white block mb-2">Social media management</strong>
+                            <strong class="text-white block mb-2">Social Media Management</strong>
                             <p class="text-gray-400 text-sm">We manage your Facebook, Instagram, Threads, and Google Business Profile to promote your business.</p>
                         </div>
                         <div class="p-6 bg-gradient-to-b from-gray-900 to-black rounded-lg border border-gray-700 card-hover-purple transition" tabindex="0" onclick="void(0)">
@@ -481,6 +493,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Our Portfolio</h2>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 text-left">
+                <!-- P002 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P002.jpg" onerror="this.src='https://placehold.co/618x1000?text=P002'" alt="P002" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -489,6 +502,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- P003 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P003.jpg" onerror="this.src='https://placehold.co/618x1000?text=P003'" alt="P003" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -497,6 +511,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- P004 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P004.jpg" onerror="this.src='https://placehold.co/618x1000?text=P004'" alt="P004" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -505,6 +520,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- P005 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P005.jpg" onerror="this.src='https://placehold.co/618x1000?text=P005'" alt="P005" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -513,6 +529,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- P006 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P006.jpg" onerror="this.src='https://placehold.co/618x1000?text=P006'" alt="P006" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -521,6 +538,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- P007 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P007.jpg" onerror="this.src='https://placehold.co/618x1000?text=P007'" alt="P007" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -529,6 +547,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- P008 -->
                 <div class="group relative overflow-hidden rounded-xl border border-gray-700 card-hover" tabindex="0" onclick="void(0)">
                     <img src="P008.jpg" onerror="this.src='https://placehold.co/618x1000?text=P008'" alt="P008" class="w-full h-96 object-cover transition duration-500 group-hover:scale-110">
                     <div class="portfolio-overlay absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100">
@@ -541,32 +560,33 @@
         </div>
     </section>
 
-    <!-- PLANS & PRICING -->
+    <!-- PLANS & PRICING (Updated with Tabs) -->
     <section id="plans" class="py-24 bg-techDark border-t border-gray-800 section-padding text-center">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="section-title text-34px">Pricing</h2>
-            <p class="mb-12">
+            <p class="mb-8">
                 <span class="text-white font-bold">3 “S” plans:</span> <span class="text-gray-400">Starter, Standard, and Super. One plan is Suitable for you.</span>
             </p>
+
+            <!-- Pricing Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold active transition" onclick="switchPricing('web')">Web Design</button>
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('graphic')">Graphic Design</button>
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('social')">Social Media Management</button>
+                <button class="pricing-tab px-6 py-3 rounded-full font-bold transition" onclick="switchPricing('ads')">Advertising Management</button>
+            </div>
+
             <div class="grid lg:grid-cols-3 gap-8 items-end text-left">
                 
                 <!-- Starter -->
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
                     <h3 class="pricing-title font-bold text-white mb-2">Starter</h3>
-                    <div class="text-neonCyan font-bold mb-6 text-34px">
+                    <div class="text-neonCyan font-bold mb-6 text-34px" id="starter-price">
                         $299<br>
-                        <!-- Changed to text-white as requested -->
                         <span class="text-sm font-normal text-white">2 days of unlimited revisions</span>
                     </div>
-                    <ul class="space-y-4 text-gray-400 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>2 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>2 Days of Unlimited Revisions</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Free Hosting at Google Sites</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Footer: Double Wood Design</div></li>
+                    <ul class="space-y-4 text-gray-400 mb-8" id="starter-list">
+                        <!-- Content injected by JS -->
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
                 </div>
@@ -575,21 +595,12 @@
                 <div class="bg-gray-800 border-2 border-neonPurple p-8 rounded-2xl relative shadow-[0_0_30px_rgba(188,19,254,0.2)] card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
                     <div class="absolute top-0 right-0 bg-neonPurple text-white px-4 py-1 rounded-tr-lg rounded-bl-lg font-bold">POPULAR</div>
                     <h3 class="pricing-title font-bold text-white mb-2">Standard</h3>
-                    <div class="text-neonPurple font-bold mb-6 text-34px">
+                    <div class="text-neonPurple font-bold mb-6 text-34px" id="standard-price">
                         $699<br>
-                        <!-- Changed to text-white as requested -->
                         <span class="text-sm font-normal text-white">6 days of unlimited revisions</span>
                     </div>
-                    <ul class="space-y-4 text-gray-300 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>6 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>6 Days of Unlimited Revisions</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Free Hosting at Cloudflare</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Chinese Translation</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-neonPurple transform -translate-y-[1px]"></i></div><div>Footer: Double Wood Design</div></li>
+                    <ul class="space-y-4 text-gray-300 mb-8" id="standard-list">
+                        <!-- Content injected by JS -->
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-neonPurple text-white py-3 rounded hover:bg-white hover:text-purple-700 transition font-bold">Select Plan</a>
                 </div>
@@ -597,20 +608,12 @@
                 <!-- Super -->
                 <div class="bg-gray-900 border border-gray-700 p-8 rounded-2xl card-hover-mixed transition h-full" tabindex="0" onclick="void(0)">
                     <h3 class="pricing-title font-bold text-white mb-2">Super</h3>
-                    <div class="text-neonCyan font-bold mb-6 text-34px">
+                    <div class="text-neonCyan font-bold mb-6 text-34px" id="super-price">
                         $999<br>
-                        <!-- Changed to text-white as requested -->
                         <span class="text-sm font-normal text-white">10 days of unlimited revisions</span>
                     </div>
-                    <ul class="space-y-4 text-gray-400 mb-8">
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>10 Pages Website</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>10 Days of Unlimited Revisions</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Mobile Responsive</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Contact Form, WhatsApp & FB Messenger</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Free Hosting at Cloudflare</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Basic SEO</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Embed Google Maps and Social Media</div></li>
-                        <li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check text-green-400 transform -translate-y-[1px]"></i></div><div>Chinese Translation</div></li>
+                    <ul class="space-y-4 text-gray-400 mb-8" id="super-list">
+                        <!-- Content injected by JS -->
                     </ul>
                     <a href="#contact" class="block w-full text-center bg-gray-800 text-white py-3 rounded hover:bg-neonCyan hover:text-black transition font-bold">Select Plan</a>
                 </div>
@@ -633,21 +636,18 @@
             </div>
 
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- 1st Reason - Added neon classes and tab index for mobile tap glow -->
                 <div class="bg-techDark p-8 rounded-xl border border-gray-700 card-hover transition" tabindex="0" onclick="void(0)">
                     <div class="text-neonCyan font-bold text-xl mb-4">1st: Risk Free</div>
                     <p class="text-gray-400">
                         We offer a "free" first draft. You pay a deposit only if you like the first draft design. You pay the balance only after you are satisfied. If you do not like the first draft, you pay $0.
                     </p>
                 </div>
-                <!-- 2nd Reason - Added neon purple class -->
                 <div class="bg-techDark p-8 rounded-xl border border-gray-700 card-hover-purple transition" tabindex="0" onclick="void(0)">
                     <div class="text-neonPurple font-bold text-xl mb-4">2nd: Chinese Expertise</div>
                     <p class="text-gray-400">
                         We are Chinese and provide "free" accurate Chinese translation to help you reach the Chinese market.
                     </p>
                 </div>
-                <!-- 3rd Reason - Added neon class -->
                 <div class="bg-techDark p-8 rounded-xl border border-gray-700 card-hover transition" tabindex="0" onclick="void(0)">
                     <div class="text-neonCyan font-bold text-xl mb-4">3rd: Best Value</div>
                     <p class="text-gray-400">
@@ -694,7 +694,8 @@
                     </div>
                     <div class="mt-8">
                         <label class="block text-neonCyan mb-2 font-bold transform translate-y-[2px]">Service Interest</label>
-                        <select name="Service" class="w-full h-[68px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
+                        <!-- Added required and default empty disabled value -->
+                        <select name="Service" required class="w-full h-[68px] bg-gray-900 border border-gray-700 rounded px-4 text-white focus:outline-none focus:border-neonPurple transition">
                             <option selected disabled value="">-- Select a Service --</option>
                             <option value="Web Design">Web Design</option>
                             <option value="Business Card Design">Business Card Design</option>
@@ -722,14 +723,68 @@
     <!-- FOOTER -->
     <footer class="bg-black py-12 border-t border-gray-800 text-center">
         <p class="text-gray-500">
-            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <span style="color: #000001; margin-left: 5px;">V1.13</span>
+            Copyright &copy; 2025 Double Wood Design Limited. All Rights Reserved. <span style="color: #000001; margin-left: 5px;">V1.14</span>
         </p>
     </footer>
 
     <!-- JAVASCRIPT LOGIC -->
     <script>
+        // Pricing Data
+        const pricingData = {
+            web: {
+                starter: { price: "$299", rev: "2 days of unlimited revisions", items: ["2 Pages Website", "2 Days of Unlimited Revisions", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Google Sites", "Basic SEO", "Embed Google Maps and Social Media", "Footer: Double Wood Design"] },
+                standard: { price: "$699", rev: "6 days of unlimited revisions", items: ["6 Pages Website", "6 Days of Unlimited Revisions", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Basic SEO", "Embed Google Maps and Social Media", "Chinese Translation", "Footer: Double Wood Design"] },
+                super: { price: "$999", rev: "10 days of unlimited revisions", items: ["10 Pages Website", "10 Days of Unlimited Revisions", "Mobile Responsive", "Contact Form, WhatsApp & FB Messenger", "Free Hosting at Cloudflare", "Basic SEO", "Embed Google Maps and Social Media", "Chinese Translation"] }
+            },
+            graphic: {
+                starter: { price: "$99", rev: "2 Days of Unlimited Revisions", items: ["2 Design Concepts", "2 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] },
+                standard: { price: "$149", rev: "3 Days of Unlimited Revisions", items: ["3 Design Concepts", "3 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] },
+                super: { price: "$199", rev: "5 Days of Unlimited Revisions", items: ["5 Design Concepts", "5 Days of Unlimited Revisions", "100% Satisfaction Guarantee", "3 File Formats (JPG, PNG & PDF)", "Logo / Flyer / Business Card"] }
+            },
+            social: {
+                starter: { price: "$99", rev: "", items: ["1 Post Per Month", "1 Caption & 1 Graphic Design Per Post"] },
+                standard: { price: "$199", rev: "", items: ["2 Post Per Month", "1 Caption & 1 Graphic Design Per Post"] },
+                super: { price: "$299", rev: "", items: ["4 Post Per Month", "1 Caption & 1 Graphic Design Per Post"] }
+            },
+            ads: {
+                starter: { price: "$199", rev: "", items: ["2 Ads Per Month", "1 Graphic Design Per Ad"] },
+                standard: { price: "$299", rev: "", items: ["3 Ads per month", "1 Graphic Design Per Ad"] },
+                super: { price: "$399", rev: "", items: ["4 Ads per month", "1 Graphic Design Per Ad"] }
+            }
+        };
+
+        function switchPricing(type) {
+            // Update Active Tab Button
+            document.querySelectorAll('.pricing-tab').forEach(btn => btn.classList.remove('active'));
+            // Simple mapping to index
+            const index = type === 'web' ? 0 : type === 'graphic' ? 1 : type === 'social' ? 2 : 3;
+            document.querySelectorAll('.pricing-tab')[index].classList.add('active');
+
+            // Update Content
+            const data = pricingData[type];
+            updateCard('starter', data.starter);
+            updateCard('standard', data.standard);
+            updateCard('super', data.super);
+        }
+
+        function updateCard(tier, data) {
+            // Update Price and Revision Text
+            const priceHtml = `${data.price}<br><span class="text-sm font-normal text-white">${data.rev}</span>`;
+            document.getElementById(`${tier}-price`).innerHTML = priceHtml;
+
+            // Update List
+            const listHtml = data.items.map(item => 
+                `<li class="flex items-start"><div class="flex-shrink-0 w-8"><i class="fas fa-check ${tier === 'standard' ? 'text-neonPurple' : 'text-green-400'} transform -translate-y-[1px]"></i></div><div>${item}</div></li>`
+            ).join('');
+            document.getElementById(`${tier}-list`).innerHTML = listHtml;
+        }
+
+        // Init
         document.addEventListener('DOMContentLoaded', () => {
-            // Mobile Menu Toggle Logic
+            // Initialize with Web Design
+            switchPricing('web');
+
+            // Mobile Menu Logic
             const btn = document.getElementById('mobile-menu-btn');
             const menu = document.getElementById('mobile-menu');
             const links = document.querySelectorAll('.mobile-link');
@@ -747,7 +802,6 @@
                     }
                 });
 
-                // Close mobile menu when a link is clicked
                 links.forEach(link => {
                     link.addEventListener('click', () => {
                         menu.classList.remove('open');
@@ -760,21 +814,19 @@
                 });
             }
 
-            // Scroll Spy Logic
+            // Scroll Spy
             const sections = document.querySelectorAll('section');
             const navLinks = document.querySelectorAll('.nav-link');
             const navHeight = 120; 
 
             window.addEventListener('scroll', () => {
                 let current = '';
-                
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
                     if (pageYOffset >= (sectionTop - navHeight - 100)) {
                         current = section.getAttribute('id');
                     }
                 });
-
                 navLinks.forEach(link => {
                     link.classList.remove('active');
                     if (link.getAttribute('href').includes(current)) {
@@ -783,17 +835,21 @@
                 });
             });
 
-            // GOOGLE SHEETS FORM SUBMISSION SCRIPT
-            // Direct URL inserted as requested, bypassing checks
+            // FORM SUBMISSION
             const scriptURL = 'https://script.google.com/macros/s/AKfycbxcz1XlhfR6TYkWmvcLZtLrZ1crPSRSBDl_d8x92sNfewzAKGyUdo8rrytn_YFeRH1FVw/exec';
-            
             const form = document.forms['submit-to-google-sheet'];
             const statusMsg = document.getElementById('form-status');
+            const submitBtn = form.querySelector('button[type="submit"]');
 
             if (form) {
                 form.addEventListener('submit', e => {
                     e.preventDefault();
                     
+                    // Change button text
+                    const originalBtnText = submitBtn.innerText;
+                    submitBtn.innerText = "Sending, please wait...";
+                    submitBtn.disabled = true;
+
                     statusMsg.innerHTML = "Sending...";
                     statusMsg.classList.remove('hidden', 'text-red-500');
                     statusMsg.classList.add('text-green-400');
@@ -802,6 +858,8 @@
                         .then(() => {
                             statusMsg.innerHTML = "Message Sent Successfully! We will contact you soon.";
                             form.reset();
+                            submitBtn.innerText = originalBtnText;
+                            submitBtn.disabled = false;
                             setTimeout(() => {
                                 statusMsg.classList.add('hidden');
                             }, 5000);
@@ -810,6 +868,8 @@
                             statusMsg.innerHTML = "Error! Please try again later.";
                             statusMsg.classList.remove('text-green-400');
                             statusMsg.classList.add('text-red-500');
+                            submitBtn.innerText = originalBtnText;
+                            submitBtn.disabled = false;
                             console.error('Error!', error.message);
                         });
                 });
